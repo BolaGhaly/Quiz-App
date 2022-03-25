@@ -43,13 +43,35 @@ const App = () => {
     setTimeout(() => setLoading(false), 2000);
   };
 
-  console.log(questions[questionNum]);
+  const checkAnswer = (e: any) => {
+    if (!gameOver) {
+      // get user's answers
+      const answer = e.currentTarget.value;
 
-  const checkAnswer = (e: any) => {};
+      // check answer against correct value/answer
+      const isCorrect = questions[questionNum].correct_answer === answer;
+
+      // Add score if answer is correct
+      if (isCorrect) {
+        setScore((prev) => prev + 1);
+      }
+
+      // Save answer in the array for user answers
+      const answerObject = {
+        question: questions[questionNum].question,
+        answer: answer,
+        correct: isCorrect,
+        correctAnswer: questions[questionNum].correct_answer,
+      };
+
+      setUserAnswers((prev) => [...prev, answerObject]);
+    }
+  };
 
   const nextQuestion = () => {
     // Move on to the next question if not the last question
     const nextQuestion = questionNum + 1;
+
 
     if (nextQuestion === TOTAL_QUESTIONS) {
       setGameOver(true);
@@ -66,7 +88,7 @@ const App = () => {
           Start Quiz
         </button>
       ) : null}
-      {!gameOver && !loading ? <p className="score">Score:</p> : null}
+      {!gameOver && !loading ? <p className="score">Score: {score}</p> : null}
       {loading ? <p>Loading Questions...</p> : null}
       {!loading && !gameOver && (
         <QuestionCard
@@ -78,9 +100,14 @@ const App = () => {
           callback={checkAnswer}
         />
       )}
-      <button className="next" onClick={nextQuestion}>
-        Next Question
-      </button>
+      {!gameOver &&
+      !loading &&
+      userAnswers.length === questionNum + 1 &&
+      questionNum !== TOTAL_QUESTIONS - 1 ? (
+        <button className="next" onClick={nextQuestion}>
+          Next Question
+        </button>
+      ) : null}
     </>
   );
 };
