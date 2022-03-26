@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import "./styles/style.css"
 import { fetchQuizQuestions } from "./API";
+
 
 // Components
 import Home from "./components/Home";
@@ -7,7 +9,6 @@ import QuestionCard from "./components/QuestionCard";
 
 // Enum Types
 import { QuestionState, Type, Difficulty } from "./API";
-
 
 export type AnswerObject = {
   question: string;
@@ -83,9 +84,9 @@ const App = () => {
 
   return (
     <>
-      <Home />
-      {/*
-      <div>
+      {/* <Home /> */}
+
+      <div className="one">
         <h1>React Quiz</h1>
         {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
           <button className="start" onClick={startQuiz}>
@@ -112,7 +113,7 @@ const App = () => {
             Next Question
           </button>
         ) : null}
-      </div> */}
+      </div>
     </>
   );
 };
