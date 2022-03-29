@@ -5,9 +5,13 @@ font-family: 'Fascinate Inline', cursive;
 font-family: 'Poppins', sans-serif;
 */
 
-// Variables
+//-------------------- Variables
+$ws-bg: rgb(238, 238, 238);
 $testing-1: blue;
 
+//-------------------- Mixin
+
+/*-------------------- Base HTML --------------------*/
 *,
 *:after,
 *:before {
@@ -25,11 +29,18 @@ html {
 }
 
 body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/bg-img.jpeg");
+  background-size: cover;
+  background-position: left center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   min-height: 100vh;
   width: 100%;
   font-family: "Poppins", sans-serif;
 }
 
+/*-------------------- Home : Form --------------------*/
 .score {
   font-size: 2rem;
   margin: 0;
@@ -58,4 +69,32 @@ h1 {
   height: 40px;
   margin: 20px 0;
   padding: 0 40px;
+}
+
+/*-------------------- Footer --------------------*/
+footer {
+  text-align: center;
+  background-color: $ws-bg;
+  padding: 10px 0;
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.75rem;
+    padding: 5px 0;
+  }
+
+  a:last-of-type {
+    margin-left: 3rem;
+  }
+
+  .fab {
+    color: black;
+  }
+
+  p {
+    font-weight: 500;
+    padding: 10px 15px 0;
+    font-size: 1.125rem;
+  }
 }

@@ -8,7 +8,7 @@ import QuestionCard from "./components/QuestionCard";
 import Footer from "./components/Footer";
 
 // Enum Types
-import { QuestionState, Type, Difficulty } from "./API";
+import { QuestionState, Difficulty } from "./API";
 
 export type AnswerObject = {
   question: string;
@@ -35,8 +35,7 @@ const App = () => {
 
     const newQuestions = await fetchQuizQuestions(
       TOTAL_QUESTIONS,
-      Difficulty.MEDIUM,
-      Type.MULTIPLE
+      Difficulty.MEDIUM
     );
 
     setQuestions(newQuestions);
@@ -85,10 +84,8 @@ const App = () => {
   return (
     <>
       {/* <Home /> */}
-
       <Home />
       <Footer />
-
       {/* <div className="one"> */
       /* <h1>React Quiz</h1> */
       /* {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (

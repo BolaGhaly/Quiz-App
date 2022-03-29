@@ -10,13 +10,13 @@ const Home = () => {
         <label htmlFor="category">Select Category:</label>
         <select id="category" name="category" required>
           <option value="">Any Category</option>
-          <option value="">General Knowledge</option>
-          <option value="">Entertainment: Books</option>
-          <option value="">Entertainment: Film</option>
-          <option value="">Entertainment: Music</option>
-          <option value="">Entertainment: Musicals &#38; Theatres</option>
-          <option value="">Entertainment: Television</option>
-          <option value="">Entertainment: Comics</option>
+          <option value="9">General Knowledge</option>
+          <option value="10">Entertainment: Books</option>
+          <option value="11">Entertainment: Film</option>
+          <option value="12">Entertainment: Music</option>
+          <option value="13">Entertainment: Musicals &#38; Theatres</option>
+          <option value="14">Entertainment: Television</option>
+          <option value="29">Entertainment: Comics</option>
           <option value="">Entertainment: Video Games</option>
           <option value="">Entertainment: Board Games</option>
           <option value="">Entertainment: Japanese Anime &#38; Manga</option>
@@ -39,16 +39,9 @@ const Home = () => {
         <label htmlFor="difficulty">Select Difficulty:</label>
         <select id="difficulty" name="difficulty" required>
           <option value="">Any Difficulty</option>
-          <option value="">Easy</option>
-          <option value="">Medium</option>
-          <option value="">Hard</option>
-        </select>
-
-        <label htmlFor="type">Select Type:</label>
-        <select id="type" name="type" required>
-          <option value="">Any Type</option>
-          <option value="">Multiple Choice</option>
-          <option value="">True / False</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
         </select>
       </form>
     </>
