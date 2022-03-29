@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import "./styles/style.css"
+import "./styles/style.css";
 import { fetchQuizQuestions } from "./API";
-
 
 // Components
 import Home from "./components/Home";
@@ -86,9 +85,11 @@ const App = () => {
     <>
       {/* <Home /> */}
 
-      <div className="one">
-        <h1>React Quiz</h1>
-        {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+      <Home />
+
+      {/* <div className="one"> */
+      /* <h1>React Quiz</h1> */
+      /* {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
           <button className="start" onClick={startQuiz}>
             Start Quiz
           </button>
@@ -112,8 +113,8 @@ const App = () => {
           <button className="next" onClick={nextQuestion}>
             Next Question
           </button>
-        ) : null}
-      </div>
+        ) : null} */
+      /* </div> */}
     </>
   );
 };
