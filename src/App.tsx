@@ -5,6 +5,7 @@ import { fetchQuizQuestions } from "./API";
 // Components
 import Home from "./components/Home";
 import QuestionCard from "./components/QuestionCard";
+import Footer from "./components/Footer";
 
 // Enum Types
 import { QuestionState, Type, Difficulty } from "./API";
@@ -86,6 +87,7 @@ const App = () => {
       {/* <Home /> */}
 
       <Home />
+      <Footer />
 
       {/* <div className="one"> */
       /* <h1>React Quiz</h1> */
