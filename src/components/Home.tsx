@@ -43,6 +43,12 @@ const Home = () => {
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
         </select>
+
+        {/* {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+          <button className="start" onClick={startQuiz}>
+            Start Quiz
+          </button>
+        ) : null} */}
       </form>
     </>
   );

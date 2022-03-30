@@ -21,6 +21,7 @@ export type AnswerObject = {
 const TOTAL_QUESTIONS = 10;
 
 const App = () => {
+  const [hideForm, setHideForm] = useState(false);
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState<QuestionState[]>([]);
   const [questionNum, setQuestionNum] = useState(0);
@@ -28,22 +29,22 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
-  const startQuiz = async () => {
-    // reset everything
-    setLoading(true);
-    setGameOver(false);
+  // const startQuiz = async () => {
+  //   // reset everything
+  //   setLoading(true);
+  //   setGameOver(false);
 
-    const newQuestions = await fetchQuizQuestions(
-      TOTAL_QUESTIONS,
-      Difficulty.MEDIUM
-    );
+  //   const newQuestions = await fetchQuizQuestions(
+  //     TOTAL_QUESTIONS,
+  //     Difficulty.MEDIUM
+  //   );
 
-    setQuestions(newQuestions);
-    setScore(0);
-    setUserAnswers([]);
-    setQuestionNum(0);
-    setTimeout(() => setLoading(false), 1000);
-  };
+  //   setQuestions(newQuestions);
+  //   setScore(0);
+  //   setUserAnswers([]);
+  //   setQuestionNum(0);
+  //   setTimeout(() => setLoading(false), 1000);
+  // };
 
   const checkAnswer = (e: any) => {
     if (!gameOver) {
@@ -83,17 +84,12 @@ const App = () => {
 
   return (
     <>
-      {/* <Home /> */}
-      <Home />
-      <Footer />
-      {/* <div className="one"> */
-      /* <h1>React Quiz</h1> */
-      /* {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-          <button className="start" onClick={startQuiz}>
-            Start Quiz
-          </button>
+      {hideForm ? null : <Home />}
+      <div className="one">
+        <h1>React Quiz</h1>
+        {!gameOver && !loading && hideForm ? (
+          <p className="score">Score: {score}</p>
         ) : null}
-        {!gameOver && !loading ? <p className="score">Score: {score}</p> : null}
         {loading ? <p>Loading Questions...</p> : null}
         {!loading && !gameOver && (
           <QuestionCard
@@ -112,8 +108,9 @@ const App = () => {
           <button className="next" onClick={nextQuestion}>
             Next Question
           </button>
-        ) : null} */
-      /* </div> */}
+        ) : null}
+      </div>
+      <Footer />
     </>
   );
 };
