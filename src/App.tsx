@@ -86,10 +86,6 @@ const App = () => {
     <>
       {hideForm ? null : <Home />}
       <div className="one">
-        <h1>React Quiz</h1>
-        {!gameOver && !loading && hideForm ? (
-          <p className="score">Score: {score}</p>
-        ) : null}
         {loading ? <p>Loading Questions...</p> : null}
         {!loading && !gameOver && (
           <QuestionCard
