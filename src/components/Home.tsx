@@ -5,25 +5,27 @@ const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDiff, setSelectedDiff] = useState("");
 
-  const formSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+  const formSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("here 1: " + selectedQuestionsNum);
+    console.log("here 2: " + selectedCategory);
+    console.log("here 3: " + selectedDiff);
   };
 
   return (
     <>
       <div className="homeForm">
-        <form onSubmit={() => formSubmit}>
+        <form onSubmit={(e) => formSubmit(e)}>
           <h1>React Quiz</h1>
-          <label htmlFor="questionsNum">Number of Questions:</label>
+          <label htmlFor="questionsNum">Number of Questions (1-100):</label>
           <input
             type="number"
             min={1}
-            max={500}
+            max={100}
             value={selectedQuestionsNum}
             required
             onChange={(e) => {
               setQuestionsNum(parseInt(e.target.value));
-              console.log(selectedQuestionsNum);
             }}
           />
 
@@ -32,7 +34,6 @@ const Home = () => {
             id="category"
             onChange={(e) => {
               setSelectedCategory(e.target.value);
-              console.log(selectedCategory);
             }}
             required
           >
@@ -64,7 +65,13 @@ const Home = () => {
           </select>
 
           <label htmlFor="difficulty">Select Difficulty:</label>
-          <select id="difficulty" required>
+          <select
+            id="difficulty"
+            onChange={(e) => {
+              setSelectedDiff(e.target.value);
+            }}
+            required
+          >
             <option value=" ">Any Difficulty</option>
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
@@ -74,11 +81,6 @@ const Home = () => {
           <button className="startBttn" type="submit">
             Start Quiz
           </button>
-          {/* {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-          <button className="start" onClick={startQuiz}>
-            Start Quiz
-          </button>
-        ) : null} */}
         </form>
       </div>
     </>
