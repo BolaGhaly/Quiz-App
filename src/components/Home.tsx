@@ -1,16 +1,42 @@
-import React, { Fragment } from "react";
+import React, { useState, Fragment } from "react";
 
 const Home = () => {
+  const [selectedQuestionsNum, setQuestionsNum] = useState(10);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedDiff, setSelectedDiff] = useState("");
+
+  const formSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <div className="homeForm">
-        <form>
+        <form onSubmit={() => formSubmit}>
+          <h1>React Quiz</h1>
           <label htmlFor="questionsNum">Number of Questions:</label>
-          <input type="questionsNum" min={1} required></input>
+          <input
+            type="number"
+            min={1}
+            max={500}
+            value={selectedQuestionsNum}
+            required
+            onChange={(e) => {
+              setQuestionsNum(parseInt(e.target.value));
+              console.log(selectedQuestionsNum);
+            }}
+          />
 
           <label htmlFor="category">Select Category:</label>
-          <select id="category" name="category" required>
-            <option value="">Any Category</option>
+          <select
+            id="category"
+            onChange={(e) => {
+              setSelectedCategory(e.target.value);
+              console.log(selectedCategory);
+            }}
+            required
+          >
+            <option value=" ">Any Category</option>
             <option value="9">General Knowledge</option>
             <option value="10">Entertainment: Books</option>
             <option value="11">Entertainment: Film</option>
@@ -38,14 +64,16 @@ const Home = () => {
           </select>
 
           <label htmlFor="difficulty">Select Difficulty:</label>
-          <select id="difficulty" name="difficulty" required>
-            <option value="">Any Difficulty</option>
+          <select id="difficulty" required>
+            <option value=" ">Any Difficulty</option>
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
           </select>
 
-          <button className="startBttn" type="submit">Start Quiz</button>
+          <button className="startBttn" type="submit">
+            Start Quiz
+          </button>
           {/* {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
           <button className="start" onClick={startQuiz}>
             Start Quiz

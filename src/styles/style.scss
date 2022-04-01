@@ -6,8 +6,13 @@ font-family: 'Poppins', sans-serif;
 */
 
 //-------------------- Variables
+$phoneS-width: 320px;
+$phoneM-width: 375px;
+$phoneL-width: 425px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$desktopL-width: 1440px;
 $ws-bg: rgb(238, 238, 238);
-$testing-1: blue;
 
 //-------------------- Mixin
 @mixin myBttns {
@@ -19,6 +24,7 @@ $testing-1: blue;
   margin: 20px 0;
   padding: 0 40px;
 }
+
 /*-------------------- Base HTML --------------------*/
 *,
 *:after,
@@ -44,7 +50,6 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
-  width: 100%;
   font-family: "Poppins", sans-serif;
 }
 
@@ -58,57 +63,47 @@ body {
   form {
     border-radius: 20px;
     margin: auto;
-    padding: 20px;
+    padding: 15px;
     background-color: $ws-bg;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: fit-content;
   }
 
   form label {
+    padding-left: 5px;
     margin-bottom: 5px;
   }
 
   form input,
   form select {
+    padding: 8px;
+    margin-left: 5px;
     margin-bottom: 30px;
+    border-radius: 5px;
   }
 }
 
 .score {
   font-size: 2rem;
   margin: 0;
-  &:hover {
-    color: $testing-1;
-  }
+  // &:hover {
+  //   color: $testing-1;
+  // }
 }
 
 h1 {
   font-family: "Fascinate Inline", cursive;
-  background-size: 100%;
-  background-clip: text;
-  filter: drop-shadow(2px 2px #0085a3);
-  font-size: 60px;
+  filter: drop-shadow(4px 2px #1bbaea);
+  font-size: 40px;
+  letter-spacing: 1px;
   text-align: center;
-  font-weight: 400;
-  margin: 20px;
+  margin-bottom: 10px;
 }
 
 .startBttn {
-  @include myBttns()
+  @include myBttns();
 }
-
-// .start,
-// .next {
-//   cursor: pointer;
-//   border: 2px solid #d38558;
-//   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-//   border-radius: 10px;
-//   height: 40px;
-//   margin: 20px 0;
-//   padding: 0 40px;
-// }
 
 /*-------------------- Footer --------------------*/
 footer {
@@ -135,5 +130,12 @@ footer {
     font-weight: 500;
     padding: 10px 15px 0;
     font-size: 1.125rem;
+  }
+}
+
+/*-------------------- Media Queries --------------------*/
+@media screen and (max-width: 492px) {
+  .homeForm {
+    height: calc(100vh - 123px);
   }
 }
