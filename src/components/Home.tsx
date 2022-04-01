@@ -44,24 +44,24 @@ const Home = () => {
             <option value="12">Entertainment: Music</option>
             <option value="13">Entertainment: Musicals &#38; Theatres</option>
             <option value="14">Entertainment: Television</option>
+            <option value="15">Entertainment: Video Games</option>
+            <option value="16">Entertainment: Board Games</option>
             <option value="29">Entertainment: Comics</option>
-            <option value="">Entertainment: Video Games</option>
-            <option value="">Entertainment: Board Games</option>
-            <option value="">Entertainment: Japanese Anime &#38; Manga</option>
-            <option value="">Entertainment: Cartoon &#38; Animations</option>
-            <option value="">Science &#38; Nature</option>
-            <option value="">Science: Computers</option>
-            <option value="">Science: Mathematics</option>
-            <option value="">Science: Gadgets</option>
-            <option value="">Mythology</option>
-            <option value="">Sports</option>
-            <option value="">Geography</option>
-            <option value="">History</option>
-            <option value="">Politics</option>
-            <option value="">Art</option>
-            <option value="">Celebrities</option>
-            <option value="">Animals</option>
-            <option value="">Vehicles</option>
+            <option value="31">Entertainment: Japanese Anime &#38; Manga</option>
+            <option value="32">Entertainment: Cartoon &#38; Animations</option>
+            <option value="17">Science &#38; Nature</option>
+            <option value="18">Science: Computers</option>
+            <option value="19">Science: Mathematics</option>
+            <option value="30">Science: Gadgets</option>
+            <option value="20">Mythology</option>
+            <option value="21">Sports</option>
+            <option value="22">Geography</option>
+            <option value="23">History</option>
+            <option value="24">Politics</option>
+            <option value="25">Art</option>
+            <option value="26">Celebrities</option>
+            <option value="27">Animals</option>
+            <option value="28">Vehicles</option>
           </select>
 
           <label htmlFor="difficulty">Select Difficulty:</label>
@@ -78,7 +78,7 @@ const Home = () => {
             <option value="hard">Hard</option>
           </select>
 
-          <button className="startBttn" type="submit">
+          <button className="startButton" type="submit">
             Start Quiz
           </button>
         </form>
