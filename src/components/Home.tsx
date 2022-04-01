@@ -1,15 +1,22 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, SetStateAction, Dispatch, Fragment } from "react";
 
-const Home = () => {
-  const [selectedQuestionsNum, setQuestionsNum] = useState(10);
+interface Props {
+  selectedQuestionsNum: number;
+  setSelectedQuestionsNum: Dispatch<SetStateAction<number>>;
+  setHideForm: Dispatch<SetStateAction<boolean>>;
+}
+
+const Home:React.FC<Props> = (props: Props) => {
+  // const [selectedQuestionsNum, setQuestionsNum] = useState(10);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDiff, setSelectedDiff] = useState("");
 
   const formSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("here 1: " + selectedQuestionsNum);
+    console.log("here 1: " + props.selectedQuestionsNum);
     console.log("here 2: " + selectedCategory);
     console.log("here 3: " + selectedDiff);
+    props.setHideForm(true);
   };
 
   return (
@@ -22,10 +29,10 @@ const Home = () => {
             type="number"
             min={1}
             max={100}
-            value={selectedQuestionsNum}
+            value={props.selectedQuestionsNum}
             required
             onChange={(e) => {
-              setQuestionsNum(parseInt(e.target.value));
+              props.setSelectedQuestionsNum(parseInt(e.target.value));
             }}
           />
 
@@ -47,7 +54,9 @@ const Home = () => {
             <option value="15">Entertainment: Video Games</option>
             <option value="16">Entertainment: Board Games</option>
             <option value="29">Entertainment: Comics</option>
-            <option value="31">Entertainment: Japanese Anime &#38; Manga</option>
+            <option value="31">
+              Entertainment: Japanese Anime &#38; Manga
+            </option>
             <option value="32">Entertainment: Cartoon &#38; Animations</option>
             <option value="17">Science &#38; Nature</option>
             <option value="18">Science: Computers</option>

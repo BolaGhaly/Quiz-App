@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, SetStateAction } from "react";
 import "./styles/style.css";
 import { fetchQuizQuestions } from "./API";
 
@@ -21,6 +21,7 @@ export type AnswerObject = {
 const TOTAL_QUESTIONS = 10;
 
 const App = () => {
+  const [selectedQuestionsNum, setQuestionsNum] = useState(10);
   const [hideForm, setHideForm] = useState(false);
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState<QuestionState[]>([]);
@@ -56,7 +57,7 @@ const App = () => {
 
       // Add score if answer is correct
       if (isCorrect) {
-        setScore((prev) => prev + 1);
+        setScore((prev: any) => prev + 1);
       }
 
       // Save answer in the array for user answers
@@ -67,7 +68,7 @@ const App = () => {
         correctAnswer: questions[questionNum].correct_answer,
       };
 
-      setUserAnswers((prev) => [...prev, answerObject]);
+      setUserAnswers((prev: any) => [...prev, answerObject]);
     }
   };
 
@@ -82,9 +83,18 @@ const App = () => {
     }
   };
 
+  console.log("here 1.1: " + selectedQuestionsNum);
+  console.log("here 1.2: " + selectedQuestionsNum);
+
   return (
     <>
-      {hideForm ? null : <Home />}
+      {hideForm ? null : (
+        <Home
+          selectedQuestionsNum={selectedQuestionsNum}
+          setSelectedQuestionsNum={setQuestionsNum}
+          setHideForm={setHideForm}
+        />
+      )}
       <div className="one">
         {loading ? <p>Loading Questions...</p> : null}
         {!loading && !gameOver && (
