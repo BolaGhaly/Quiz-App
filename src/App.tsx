@@ -18,10 +18,14 @@ export type AnswerObject = {
 };
 
 // will change later...
-const TOTAL_QUESTIONS = 10;
+// const TOTAL_QUESTIONS = 10;
 
 const App = () => {
+  // home - form
   const [selectedQuestionsNum, setQuestionsNum] = useState(10);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedDiff, setSelectedDiff] = useState("");
+
   const [hideForm, setHideForm] = useState(false);
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState<QuestionState[]>([]);
@@ -30,22 +34,22 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
-  // const startQuiz = async () => {
-  //   // reset everything
-  //   setLoading(true);
-  //   setGameOver(false);
+  const startQuiz = async () => {
+    // reset everything
+    setLoading(true);
+    setGameOver(false);
 
-  //   const newQuestions = await fetchQuizQuestions(
-  //     TOTAL_QUESTIONS,
-  //     Difficulty.MEDIUM
-  //   );
+    const newQuestions = await fetchQuizQuestions(
+      selectedQuestionsNum,
+      Difficulty.MEDIUM
+    );
 
-  //   setQuestions(newQuestions);
-  //   setScore(0);
-  //   setUserAnswers([]);
-  //   setQuestionNum(0);
-  //   setTimeout(() => setLoading(false), 1000);
-  // };
+    setQuestions(newQuestions);
+    setScore(0);
+    setUserAnswers([]);
+    setQuestionNum(0);
+    setTimeout(() => setLoading(false), 1000);
+  };
 
   const checkAnswer = (e: any) => {
     if (!gameOver) {
@@ -76,15 +80,16 @@ const App = () => {
     // Move on to the next question if not the last question
     const nextQuestion = questionNum + 1;
 
-    if (nextQuestion === TOTAL_QUESTIONS) {
+    if (nextQuestion === selectedQuestionsNum) {
       setGameOver(true);
     } else {
       setQuestionNum(nextQuestion);
     }
   };
 
-  console.log("here 1.1: " + selectedQuestionsNum);
-  console.log("here 1.2: " + selectedQuestionsNum);
+  // console.log("here 1: " + selectedQuestionsNum);
+  // console.log("here 2: " + selectedCategory);
+  // console.log("here 3: " + selectedDiff);
 
   return (
     <>
@@ -92,15 +97,18 @@ const App = () => {
         <Home
           selectedQuestionsNum={selectedQuestionsNum}
           setSelectedQuestionsNum={setQuestionsNum}
+          setSelectedCategory={setSelectedCategory}
+          setSelectedDiff={setSelectedDiff}
           setHideForm={setHideForm}
+          startQuiz={startQuiz}
         />
       )}
       <div className="one">
-        {loading ? <p>Loading Questions...</p> : null}
+        {loading && hideForm ? <p>Loading Questions...</p> : null}
         {!loading && !gameOver && (
           <QuestionCard
             questionNum={questionNum + 1}
-            totalQuestions={TOTAL_QUESTIONS}
+            totalQuestions={selectedQuestionsNum}
             question={questions[questionNum].question}
             answers={questions[questionNum].answers}
             userAnswer={userAnswers ? userAnswers[questionNum] : undefined}
@@ -110,7 +118,7 @@ const App = () => {
         {!gameOver &&
         !loading &&
         userAnswers.length === questionNum + 1 &&
-        questionNum !== TOTAL_QUESTIONS - 1 ? (
+        questionNum !== selectedQuestionsNum - 1 ? (
           <button className="next" onClick={nextQuestion}>
             Next Question
           </button>

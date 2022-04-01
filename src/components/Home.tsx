@@ -3,19 +3,15 @@ import React, { useState, SetStateAction, Dispatch, Fragment } from "react";
 interface Props {
   selectedQuestionsNum: number;
   setSelectedQuestionsNum: Dispatch<SetStateAction<number>>;
+  setSelectedCategory: Dispatch<SetStateAction<string>>;
+  setSelectedDiff: Dispatch<SetStateAction<string>>;
   setHideForm: Dispatch<SetStateAction<boolean>>;
+  startQuiz: any;
 }
 
-const Home:React.FC<Props> = (props: Props) => {
-  // const [selectedQuestionsNum, setQuestionsNum] = useState(10);
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedDiff, setSelectedDiff] = useState("");
-
+const Home: React.FC<Props> = (props: Props) => {
   const formSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("here 1: " + props.selectedQuestionsNum);
-    console.log("here 2: " + selectedCategory);
-    console.log("here 3: " + selectedDiff);
     props.setHideForm(true);
   };
 
@@ -40,7 +36,7 @@ const Home:React.FC<Props> = (props: Props) => {
           <select
             id="category"
             onChange={(e) => {
-              setSelectedCategory(e.target.value);
+              props.setSelectedCategory(e.target.value);
             }}
             required
           >
@@ -77,7 +73,7 @@ const Home:React.FC<Props> = (props: Props) => {
           <select
             id="difficulty"
             onChange={(e) => {
-              setSelectedDiff(e.target.value);
+              props.setSelectedDiff(e.target.value);
             }}
             required
           >
@@ -87,7 +83,7 @@ const Home:React.FC<Props> = (props: Props) => {
             <option value="hard">Hard</option>
           </select>
 
-          <button className="startButton" type="submit">
+          <button className="startButton" type="submit" onClick={props.startQuiz}>
             Start Quiz
           </button>
         </form>
