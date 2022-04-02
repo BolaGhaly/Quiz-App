@@ -1,3 +1,4 @@
+import React, { SetStateAction, Dispatch } from "react";
 import { shuffleArray } from "./utils";
 
 export type Question = {
@@ -15,12 +16,26 @@ export type QuestionState = Question & {
 export const fetchQuizQuestions = async (
   amount: number,
   category: string,
-  difficulty: string
+  difficulty: string,
+  setSelectedQuestionsNum: Dispatch<SetStateAction<number>>
 ) => {
   const response = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&category=${category}&type=multiple`;
   const data = await (await fetch(response)).json();
-  console.log(data);
-  console.log(data.length);
+
+  // art category
+  // if (data.results.length < amount && category === "25") {
+  //   amount = 22;
+  //   const response = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&category=${category}&type=multiple`;
+  //   const data = await (await fetch(response)).json();
+
+  //   return data.results.map((question: Question) => ({
+  //     ...question,
+  //     answers: shuffleArray([
+  //       ...question.incorrect_answers,
+  //       question.correct_answer,
+  //     ]),
+  //   }));
+  // }
   return data.results.map((question: Question) => ({
     ...question,
     answers: shuffleArray([

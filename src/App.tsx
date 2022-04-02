@@ -1,6 +1,5 @@
-import React, { useState, SetStateAction } from "react";
+import React, { useState } from "react";
 import "./styles/style.css";
-import { fetchQuizQuestions } from "./API";
 
 // Components
 import Home from "./components/Home";
@@ -17,114 +16,60 @@ export type AnswerObject = {
   correctAnswer: string;
 };
 
-// will change later...
-// const TOTAL_QUESTIONS = 10;
-
 const App = () => {
-  // home - form
-  const [selectedQuestionsNum, setQuestionsNum] = useState(10);
+  // Home - Form
+  const [selectedQuestionsNum, setSelectedQuestionsNum] = useState(10);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDiff, setSelectedDiff] = useState("");
-
   const [hideForm, setHideForm] = useState(false);
+
   const [loading, setLoading] = useState(false);
+
+  // Questions - Cards
   const [questions, setQuestions] = useState<QuestionState[]>([]);
   const [questionNum, setQuestionNum] = useState(0);
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
-  const startQuiz = async () => {
-    // reset everything
-    setLoading(true);
-    setGameOver(false);
-
-    const newQuestions = await fetchQuizQuestions(
-      selectedQuestionsNum,
-      selectedCategory,
-      selectedDiff
-    );
-
-    setQuestions(newQuestions);
-    setScore(0);
-    setUserAnswers([]);
-    setQuestionNum(0);
-    setTimeout(() => setLoading(false), 1000);
-  };
-
-  const checkAnswer = (e: any) => {
-    if (!gameOver) {
-      // get user's answers
-      const answer = e.currentTarget.value;
-
-      // check answer against correct value/answer
-      const isCorrect = questions[questionNum].correct_answer === answer;
-
-      // Add score if answer is correct
-      if (isCorrect) {
-        setScore((prev: any) => prev + 1);
-      }
-
-      // Save answer in the array for user answers
-      const answerObject = {
-        question: questions[questionNum].question,
-        answer: answer,
-        correct: isCorrect,
-        correctAnswer: questions[questionNum].correct_answer,
-      };
-
-      setUserAnswers((prev: any) => [...prev, answerObject]);
-    }
-  };
-
-  const nextQuestion = () => {
-    // Move on to the next question if not the last question
-    const nextQuestion = questionNum + 1;
-
-    if (nextQuestion === selectedQuestionsNum) {
-      setGameOver(true);
-    } else {
-      setQuestionNum(nextQuestion);
-    }
-  };
-
-  // console.log("here 1: " + selectedQuestionsNum);
-  // console.log("here 2: " + selectedCategory);
-  // console.log("here 3: " + selectedDiff);
-
   return (
     <>
       {hideForm ? null : (
         <Home
           selectedQuestionsNum={selectedQuestionsNum}
-          setSelectedQuestionsNum={setQuestionsNum}
+          selectedCategory={selectedCategory}
+          selectedDiff={selectedDiff}
+          setSelectedQuestionsNum={setSelectedQuestionsNum}
           setSelectedCategory={setSelectedCategory}
           setSelectedDiff={setSelectedDiff}
           setHideForm={setHideForm}
-          startQuiz={startQuiz}
+          setLoading={setLoading}
+          setGameOver={setGameOver}
+          setQuestions={setQuestions}
+          setScore={setScore}
+          setUserAnswers={setUserAnswers}
+          setQuestionNum={setQuestionNum}
         />
       )}
-      <div className="one">
-        {loading && hideForm ? <p>Loading Questions...</p> : null}
-        {!loading && !gameOver && (
-          <QuestionCard
-            questionNum={questionNum + 1}
-            totalQuestions={selectedQuestionsNum}
-            question={questions[questionNum].question}
-            answers={questions[questionNum].answers}
-            userAnswer={userAnswers ? userAnswers[questionNum] : undefined}
-            callback={checkAnswer}
-          />
-        )}
-        {/* {!gameOver &&
-        !loading &&
-        userAnswers.length === questionNum + 1 &&
-        questionNum !== selectedQuestionsNum - 1 ? (
-          <button className="next" onClick={nextQuestion}>
-            Next Question
-          </button>
-        ) : null} */}
-      </div>
+      {loading && hideForm ? <p>Loading Questions...</p> : null}
+      {!loading && !gameOver && (
+        <QuestionCard
+          selectedQuestionsNum={selectedQuestionsNum}
+          questionNum={questionNum + 1}
+          totalQuestions={selectedQuestionsNum}
+          question={questions[questionNum].question}
+          answers={questions[questionNum].answers}
+          userAnswer={userAnswers ? userAnswers[questionNum] : undefined}
+          gameOver={gameOver}
+          questions={questions}
+          loading={loading}
+          userAnswers={userAnswers}
+          setScore={setScore}
+          setUserAnswers={setUserAnswers}
+          setQuestionNum={setQuestionNum}
+          setGameOver={setGameOver}
+        />
+      )}
       <Footer />
     </>
   );

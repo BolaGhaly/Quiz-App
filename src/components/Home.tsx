@@ -1,15 +1,43 @@
-import React, { SetStateAction, Dispatch, Fragment } from "react";
+import React, { SetStateAction, Dispatch } from "react";
+import { fetchQuizQuestions, QuestionState } from "../API";
+import { AnswerObject } from "../App";
 
 interface Props {
   selectedQuestionsNum: number;
+  selectedCategory: string;
+  selectedDiff: string;
   setSelectedQuestionsNum: Dispatch<SetStateAction<number>>;
   setSelectedCategory: Dispatch<SetStateAction<string>>;
   setSelectedDiff: Dispatch<SetStateAction<string>>;
   setHideForm: Dispatch<SetStateAction<boolean>>;
-  startQuiz: any;
+  setLoading: Dispatch<SetStateAction<boolean>>;
+  setGameOver: Dispatch<SetStateAction<boolean>>;
+  setQuestions: Dispatch<SetStateAction<QuestionState[]>>;
+  setScore: Dispatch<SetStateAction<number>>;
+  setUserAnswers: Dispatch<SetStateAction<AnswerObject[]>>;
+  setQuestionNum: Dispatch<SetStateAction<number>>;
 }
 
 const Home: React.FC<Props> = (props: Props) => {
+  const startQuiz = async () => {
+    // reset everything
+    props.setLoading(true);
+    props.setGameOver(false);
+
+    const newQuestions = await fetchQuizQuestions(
+      props.selectedQuestionsNum,
+      props.selectedCategory,
+      props.selectedDiff,
+      props.setSelectedQuestionsNum
+    );
+
+    props.setQuestions(newQuestions);
+    props.setScore(0);
+    props.setUserAnswers([]);
+    props.setQuestionNum(0);
+    setTimeout(() => props.setLoading(false), 1000);
+  };
+
   const formSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     props.setHideForm(true);
@@ -83,7 +111,7 @@ const Home: React.FC<Props> = (props: Props) => {
             <option value="hard">Hard</option>
           </select>
 
-          <button className="startButton" type="submit" onClick={props.startQuiz}>
+          <button className="startButton" type="submit" onClick={startQuiz}>
             Start Quiz
           </button>
         </form>
