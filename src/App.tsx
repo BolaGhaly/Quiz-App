@@ -59,7 +59,7 @@ const App = () => {
           <div></div>
         </div>
       ) : null}
-      {!loading && !gameOver && (
+      {!loading && !gameOver && hideForm === true ? (
         <QuestionCard
           selectedQuestionsNum={selectedQuestionsNum}
           questionNum={questionNum + 1}
@@ -71,13 +71,13 @@ const App = () => {
           questions={questions}
           loading={loading}
           userAnswers={userAnswers}
-          correct={correct}
+          score={score}
           setScore={setScore}
           setUserAnswers={setUserAnswers}
           setQuestionNum={setQuestionNum}
           setGameOver={setGameOver}
         />
-      )}
+      ) : null}
       <Footer />
     </>
   );

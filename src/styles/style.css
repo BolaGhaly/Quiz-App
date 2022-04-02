@@ -86,7 +86,17 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/*-------------------- Home : Form --------------------*/
+h1 {
+  font-family: "Fascinate Inline", cursive;
+  -webkit-filter: drop-shadow(4px 2px #1bbaea);
+          filter: drop-shadow(4px 2px #1bbaea);
+  font-size: 40px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/*-------------------- Home.tsx --------------------*/
 .homeForm {
   height: calc(100vh - 95px);
   display: -webkit-box;
@@ -98,16 +108,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.homeForm h1 {
-  font-family: "Fascinate Inline", cursive;
-  -webkit-filter: drop-shadow(4px 2px #1bbaea);
-          filter: drop-shadow(4px 2px #1bbaea);
-  font-size: 40px;
-  letter-spacing: 1px;
-  text-align: center;
-  margin-bottom: 10px;
 }
 
 .homeForm form {
@@ -129,8 +129,7 @@ body {
 }
 
 .homeForm form label {
-  padding-left: 5px;
-  margin-bottom: 5px;
+  margin: 0 0 5px 5px;
   font-weight: 600;
 }
 
@@ -144,19 +143,94 @@ body {
   font-weight: 500;
 }
 
-.startButton {
+.homeForm .startButton {
   cursor: pointer;
-  border: 2px solid tan;
-  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  border: 2px solid #635544;
+  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   margin: 0 auto;
   padding: 10px 40px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  font-size: 15px;
+  font-size: 16px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f1e4e4), to(#ce811d));
+  background: linear-gradient(180deg, #f1e4e4, #ce811d);
   font-weight: 600;
+}
+
+/*-------------------- QuestionCard.tsx --------------------*/
+.cardContainer {
+  height: calc(100vh - 95px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cardContainer .cards {
+  width: 400px;
+  border-radius: 20px;
+  margin: auto;
+  padding: 15px;
+  background-color: #eeeeee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cardContainer .cards h4 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.cardContainer .cards p {
+  margin-top: 10px;
+  font-size: 18px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.cardContainer .cards .answersButtons {
+  margin-top: 20px;
+}
+
+.cardContainer .cards .answersButtons :hover {
+  opacity: 0.8;
+}
+
+.cardContainer .cards .answersButtons button {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  padding: 5px 0;
+  margin: 10px 0;
+  border: 2px solid #1a1a1a;
+  -webkit-box-shadow: -6px 5px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: -6px 5px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  color: black;
 }
 
 /*-------------------- Footer --------------------*/
@@ -189,7 +263,8 @@ footer p {
 
 /*-------------------- Media Queries --------------------*/
 @media screen and (max-width: 492px) {
-  .homeForm, .dots {
+  .homeForm,
+  .dots {
     height: calc(100vh - 122px);
   }
 }

@@ -48,11 +48,11 @@ const Home: React.FC<Props> = (props: Props) => {
       <div className="homeForm">
         <form onSubmit={(e) => formSubmit(e)}>
           <h1>React Quiz</h1>
-          <label htmlFor="questionsNum">Number of Questions (1-100):</label>
+          <label htmlFor="questionsNum">Number of Questions (1-50):</label>
           <input
             type="number"
             min={1}
-            max={100}
+            max={50}
             value={props.selectedQuestionsNum}
             required
             onChange={(e) => {

@@ -15,7 +15,7 @@ type Props = {
   userAnswer: AnswerObject | undefined;
   gameOver: boolean;
   loading: boolean;
-  correct: boolean,
+  score: number;
   setScore: Dispatch<SetStateAction<number>>;
   setUserAnswers: Dispatch<SetStateAction<AnswerObject[]>>;
   setQuestionNum: Dispatch<SetStateAction<number>>;
@@ -61,35 +61,43 @@ const QuestionCard: React.FC<Props> = (props: Props) => {
   };
 
   return (
-    <div>
-      <p className="number">
-        Question: {props.questionNum} / {props.totalQuestions}
-      </p>
-      <p>{props.question}</p>
-      <div>
-        {props.answers.map((answer) => (
-          <div
-            key={answer}
-            // correct={props.userAnswer?.correctAnswer === answer}
-            // userClicked={props.userAnswer?.answer === answer}
-          >
-            <button
-              disabled={props.userAnswer ? true : false}
-              value={answer}
-              onClick={checkAnswer}
+    <div className="cardContainer">
+      <div className="cards">
+        <h1>React Quiz</h1>
+        <h4 className="score">
+          Score: {props.score} / {props.totalQuestions}
+        </h4>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: ` Question ${props.questionNum}: ` + props.question,
+          }}
+        />
+        <div className="answersButtons">
+          {props.answers.map((answer) => (
+            <div
+              key={answer}
+
+              // correct={props.userAnswer?.correctAnswer === answer}
+              // userClicked={props.userAnswer?.answer === answer}
             >
-              <span dangerouslySetInnerHTML={{ __html: answer }} />
+              <button
+                disabled={props.userAnswer ? true : false}
+                value={answer}
+                onClick={checkAnswer}
+              >
+                <span dangerouslySetInnerHTML={{ __html: answer }} />
+              </button>
+            </div>
+          ))}
+          {!props.gameOver &&
+          !props.loading &&
+          props.userAnswers.length === props.questionNum + 1 &&
+          props.questionNum !== props.selectedQuestionsNum - 1 ? (
+            <button className="next" onClick={nextQuestion}>
+              Next Question
             </button>
-          </div>
-        ))}
-        {!props.gameOver &&
-        !props.loading &&
-        props.userAnswers.length === props.questionNum + 1 &&
-        props.questionNum !== props.selectedQuestionsNum - 1 ? (
-          <button className="next" onClick={nextQuestion}>
-            Next Question
-          </button>
-        ) : null}
+          ) : null}
+        </div>
       </div>
     </div>
   );
