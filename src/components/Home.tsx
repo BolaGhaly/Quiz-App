@@ -35,7 +35,7 @@ const Home: React.FC<Props> = (props: Props) => {
     props.setScore(0);
     props.setUserAnswers([]);
     props.setQuestionNum(0);
-    setTimeout(() => props.setLoading(false), 1000);
+    setTimeout(() => props.setLoading(false), 1800);
   };
 
   const formSubmit = (e: React.FormEvent<HTMLFormElement>) => {

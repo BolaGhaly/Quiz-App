@@ -4,6 +4,60 @@ Google Fonts...
 font-family: 'Fascinate Inline', cursive;
 font-family: 'Poppins', sans-serif;
 */
+.dots {
+  height: calc(100vh - 95px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+
+.dots div {
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 12px;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  -webkit-filter: drop-shadow(0px 0px 2px black);
+          filter: drop-shadow(0px 0px 2px black);
+  -webkit-animation: fade 0.8s ease-in-out alternate infinite;
+          animation: fade 0.8s ease-in-out alternate infinite;
+}
+
+.dots div:nth-of-type(1) {
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+
+.dots div:nth-of-type(2) {
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 /*-------------------- Base HTML --------------------*/
 *,
 *:after,
@@ -22,10 +76,10 @@ html {
 }
 
 body {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/bg-img.jpeg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/bg-img.jpeg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url("../unsplash-bg.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../unsplash-bg.jpg");
   background-size: cover;
-  background-position: left center;
+  background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -135,7 +189,7 @@ footer p {
 
 /*-------------------- Media Queries --------------------*/
 @media screen and (max-width: 492px) {
-  .homeForm {
+  .homeForm, .dots {
     height: calc(100vh - 122px);
   }
 }

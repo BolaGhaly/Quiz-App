@@ -11,10 +11,11 @@ type Props = {
   question: string;
   questions: QuestionState[];
   answers: string[];
+  userAnswers: AnswerObject[];
   userAnswer: AnswerObject | undefined;
   gameOver: boolean;
   loading: boolean;
-  userAnswers: AnswerObject[];
+  correct: boolean,
   setScore: Dispatch<SetStateAction<number>>;
   setUserAnswers: Dispatch<SetStateAction<AnswerObject[]>>;
   setQuestionNum: Dispatch<SetStateAction<number>>;
@@ -69,8 +70,8 @@ const QuestionCard: React.FC<Props> = (props: Props) => {
         {props.answers.map((answer) => (
           <div
             key={answer}
-            // correct={userAnswer?.correctAnswer === answer}
-            // userClicked={userAnswer?.answer === answer}
+            // correct={props.userAnswer?.correctAnswer === answer}
+            // userClicked={props.userAnswer?.answer === answer}
           >
             <button
               disabled={props.userAnswer ? true : false}

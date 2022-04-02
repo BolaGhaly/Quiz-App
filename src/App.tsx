@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./styles/style.css";
 
 // Components
@@ -31,6 +31,7 @@ const App = () => {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
+  const [correct, setCorrect] = useState(false);
 
   return (
     <>
@@ -51,7 +52,13 @@ const App = () => {
           setQuestionNum={setQuestionNum}
         />
       )}
-      {loading && hideForm ? <p>Loading Questions...</p> : null}
+      {loading && hideForm ? (
+        <div className="dots">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      ) : null}
       {!loading && !gameOver && (
         <QuestionCard
           selectedQuestionsNum={selectedQuestionsNum}
@@ -64,6 +71,7 @@ const App = () => {
           questions={questions}
           loading={loading}
           userAnswers={userAnswers}
+          correct={correct}
           setScore={setScore}
           setUserAnswers={setUserAnswers}
           setQuestionNum={setQuestionNum}
