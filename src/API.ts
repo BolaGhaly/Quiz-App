@@ -21,7 +21,21 @@ export const fetchQuizQuestions = async (
 ) => {
   const response = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&category=${category}&type=multiple`;
   const data = await (await fetch(response)).json();
-  
+
+  if (data.results.length === 0) {
+    setSelectedQuestionsNum(10);
+    const response = `https://opentdb.com/api.php?amount=10&difficulty=${difficulty}&category=${category}&type=multiple`;
+    const data = await (await fetch(response)).json();
+
+    return data.results.map((question: Question) => ({
+      ...question,
+      answers: shuffleArray([
+        ...question.incorrect_answers,
+        question.correct_answer,
+      ]),
+    }));
+  }
+
   return data.results.map((question: Question) => ({
     ...question,
     answers: shuffleArray([

@@ -110,6 +110,15 @@ h1 {
           align-items: center;
 }
 
+.homeForm p {
+  margin: 0 0 20px 5px;
+  font-weight: 500;
+}
+
+.homeForm p span {
+  color: red;
+}
+
 .homeForm form {
   width: 400px;
   border-radius: 20px;

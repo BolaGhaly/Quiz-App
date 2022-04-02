@@ -48,6 +48,9 @@ const Home: React.FC<Props> = (props: Props) => {
       <div className="homeForm">
         <form onSubmit={(e) => formSubmit(e)}>
           <h1>React Quiz</h1>
+          <p>
+            <span>*</span> Note: If the selected number of questions is higher than the max number of questions for the selected category and/or difficulty, then number of questions will default back to 10.
+          </p>
           <label htmlFor="questionsNum">Number of Questions (1-50):</label>
           <input
             type="number"

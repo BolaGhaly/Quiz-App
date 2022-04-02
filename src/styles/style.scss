@@ -85,6 +85,7 @@ html {
 }
 
 body {
+  // background-color: $ws-bg;
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url("../unsplash-bg.jpg");
   background-size: cover;
@@ -107,6 +108,15 @@ h1 {
 /*-------------------- Home.tsx --------------------*/
 .homeForm {
   @include cardsContainer();
+
+  p {
+    margin: 0 0 20px 5px;
+    font-weight: 500;
+
+    span {
+      color: red;
+    }
+  }
 
   form {
     width: 400px;
@@ -138,7 +148,6 @@ h1 {
     @include myButtons();
   }
 }
-
 
 /*-------------------- QuestionCard.tsx --------------------*/
 .cardContainer {
@@ -190,8 +199,6 @@ h1 {
   }
 }
 
-
-
 /*-------------------- Footer --------------------*/
 footer {
   text-align: center;
@@ -222,7 +229,6 @@ footer {
 
 /*-------------------- Media Queries --------------------*/
 @media screen and (max-width: 492px) {
-
   .homeForm,
   .dots {
     height: calc(100vh - 122px);
