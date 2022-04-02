@@ -1,17 +1,10 @@
 import { shuffleArray } from "./utils";
 
-export enum Difficulty {
-  ANY = "",
-  EASY = "easy",
-  MEDIUM = "medium",
-  HARD = "hard",
-}
-
 export type Question = {
   category: string;
-  correct_answer: string;
   difficulty: string;
   incorrect_answers: string[];
+  correct_answer: string;
   question: string;
 };
 
@@ -21,10 +14,13 @@ export type QuestionState = Question & {
 
 export const fetchQuizQuestions = async (
   amount: number,
-  difficulty: Difficulty
+  category: string,
+  difficulty: string
 ) => {
-  const response = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=multiple`;
+  const response = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&category=${category}&type=multiple`;
   const data = await (await fetch(response)).json();
+  console.log(data);
+  console.log(data.length);
   return data.results.map((question: Question) => ({
     ...question,
     answers: shuffleArray([

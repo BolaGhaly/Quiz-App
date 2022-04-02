@@ -24,7 +24,7 @@ const QuestionCard: React.FC<Props> = ({
     <p className="number">
       Question: {questionNum} / {totalQuestions}
     </p>
-    <p>{question} </p>
+    <p>{question}</p>
     <div>
       {answers.map((answer) => (
         <div
@@ -41,6 +41,14 @@ const QuestionCard: React.FC<Props> = ({
           </button>
         </div>
       ))}
+      {/* {!gameOver &&
+      !loading &&
+      userAnswers.length === questionNum + 1 &&
+      questionNum !== selectedQuestionsNum - 1 ? (
+        <button className="next" onClick={nextQuestion}>
+          Next Question
+        </button>
+      ) : null} */}
     </div>
   </div>
 );

@@ -8,7 +8,7 @@ import QuestionCard from "./components/QuestionCard";
 import Footer from "./components/Footer";
 
 // Enum Types
-import { QuestionState, Difficulty } from "./API";
+import { QuestionState } from "./API";
 
 export type AnswerObject = {
   question: string;
@@ -41,7 +41,8 @@ const App = () => {
 
     const newQuestions = await fetchQuizQuestions(
       selectedQuestionsNum,
-      Difficulty.MEDIUM
+      selectedCategory,
+      selectedDiff
     );
 
     setQuestions(newQuestions);
@@ -115,14 +116,14 @@ const App = () => {
             callback={checkAnswer}
           />
         )}
-        {!gameOver &&
+        {/* {!gameOver &&
         !loading &&
         userAnswers.length === questionNum + 1 &&
         questionNum !== selectedQuestionsNum - 1 ? (
           <button className="next" onClick={nextQuestion}>
             Next Question
           </button>
-        ) : null}
+        ) : null} */}
       </div>
       <Footer />
     </>

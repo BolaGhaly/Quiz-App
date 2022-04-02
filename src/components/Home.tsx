@@ -1,4 +1,4 @@
-import React, { useState, SetStateAction, Dispatch, Fragment } from "react";
+import React, { SetStateAction, Dispatch, Fragment } from "react";
 
 interface Props {
   selectedQuestionsNum: number;
