@@ -239,6 +239,24 @@ h1 {
   background-color: #eeeeee;
 }
 
+.cardContainer .cards .nextButton {
+  cursor: pointer;
+  border: 2px solid #635544;
+  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 10px 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f1e4e4), to(#ce811d));
+  background: linear-gradient(180deg, #f1e4e4, #ce811d);
+  font-weight: 600;
+  margin: 20px auto 10px;
+}
+
 /*-------------------- Footer --------------------*/
 footer {
   text-align: center;

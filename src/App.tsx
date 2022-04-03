@@ -62,14 +62,13 @@ const App = () => {
       {!loading && !gameOver && hideForm === true ? (
         <QuestionCard
           selectedQuestionsNum={selectedQuestionsNum}
-          questionNum={questionNum + 1}
+          questionNum={questionNum}
           totalQuestions={selectedQuestionsNum}
           question={questions[questionNum].question}
           answers={questions[questionNum].answers}
           userAnswer={userAnswers ? userAnswers[questionNum] : undefined}
           gameOver={gameOver}
           questions={questions}
-          loading={loading}
           userAnswers={userAnswers}
           score={score}
           setScore={setScore}
