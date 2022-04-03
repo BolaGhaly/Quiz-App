@@ -272,7 +272,7 @@ footer p {
   .homeForm,
   .dots,
   .cardContainer {
-    height: calc(100vh - 133px);
+    height: calc(100vh - 132px);
   }
 }
 
@@ -285,10 +285,7 @@ footer p {
   }
 }
 
-@media screen and (max-width: 355px) {
-  .homeForm {
-    height: 100%;
-  }
+@media screen and (max-width: 375px) {
   .homeForm form {
     padding: 10px;
     margin: 30px auto;
@@ -302,7 +299,19 @@ footer p {
 
 @media screen and (max-width: 320px) {
   .homeForm form {
-    width: 260px;
+    width: 300px;
+  }
+  .cardContainer .cards {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .homeForm form {
+    width: 270px;
+  }
+  .cardContainer .cards {
+    width: 270px;
   }
 }
 

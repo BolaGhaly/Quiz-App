@@ -83,11 +83,9 @@ html {
 
 body {
   // background-color: $ws-bg;
-  background-image: linear-gradient(
-      100deg,
+  background-image: linear-gradient(100deg,
       rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.8)
-    ),
+      rgba(0, 0, 0, 0.8)),
     url("../unsplash-bg.jpg");
   background-size: cover;
   background-position: center center;
@@ -230,10 +228,11 @@ footer {
 
 /*-------------------- Media Queries --------------------*/
 @media screen and (max-width: 492px) {
+
   .homeForm,
   .dots,
   .cardContainer {
-    height: calc(100vh - 133px);
+    height: calc(100vh - 132px);
   }
 }
 
@@ -243,6 +242,7 @@ footer {
       width: 360px;
     }
   }
+
   .cardContainer {
     .cards {
       width: 360px;
@@ -250,10 +250,8 @@ footer {
   }
 }
 
-@media screen and (max-width: 355px) {
+@media screen and (max-width: 375px) {
   .homeForm {
-    height: 100%;
-
     form {
       padding: 10px;
       margin: 30px auto;
@@ -272,11 +270,30 @@ footer {
 @media screen and (max-width: 320px) {
   .homeForm {
     form {
-      width: 260px;
+      width: 300px;
+    }
+  }
+
+  .cardContainer {
+    .cards {
+      width: 300px;
     }
   }
 }
 
+@media screen and (max-width: 300px) {
+  .homeForm {
+    form {
+      width: 270px;
+    }
+  }
+
+  .cardContainer {
+    .cards {
+      width: 270px;
+    }
+  }
+}
 
 @media screen and (max-width: 1024px) and (max-height: 600px) {
   .homeForm {
