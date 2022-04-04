@@ -71,16 +71,25 @@ const QuestionCard: React.FC<Props> = (props: Props) => {
         />
         <div className="answersButtons">
           {props.answers.map((answer) => (
-            <div
-              key={answer}
-              // correct={props.userAnswer?.correctAnswer === answer}
-              // userClicked={props.userAnswer?.answer === answer}
-            >
+            <div key={answer}>
               <button
                 disabled={
                   props.userAnswers.length === props.questionNum + 1
                     ? true
                     : false
+                }
+                className={
+                  props.userAnswers.length.toString() ===
+                    (props.questionNum + 1).toString() &&
+                  props.questions[props.questionNum].correct_answer === answer
+                    ? "correctAns"
+                    : props.userAnswers.length.toString() ===
+                        (props.questionNum + 1).toString() &&
+                      props.questions[props.questionNum].correct_answer !==
+                        answer &&
+                      props.userAnswer?.answer === answer
+                    ? "wrongAns"
+                    : "anyAns"
                 }
                 value={answer}
                 onClick={checkAnswer}

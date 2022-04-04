@@ -188,11 +188,24 @@ h1 {
         width: 100%;
         padding: 6px 10px;
         margin: 10px 0;
-        border: 1px solid rgb(26, 26, 26);
-        box-shadow: -6px 5px 5px rgba(0, 0, 0, 0.5);
+        box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
         border-radius: 15px;
         color: black;
-        background-color: $ws-bg;
+      }
+
+      .correctAns {
+        border: 2px solid rgb(0, 138, 0);
+        background: lightgreen;
+      }
+
+      .wrongAns {
+        border: 2px solid rgb(233, 25, 25);
+        background: lightcoral;
+      }
+
+      .anyAns {
+        border: 2px solid rgb(236, 104, 55);
+        background: rgb(182, 255, 246);
       }
     }
 

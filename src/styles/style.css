@@ -231,12 +231,25 @@ h1 {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
-  border: 1px solid #1a1a1a;
-  -webkit-box-shadow: -6px 5px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: -6px 5px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+          box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
-  background-color: #eeeeee;
+}
+
+.cardContainer .cards .answersButtons .correctAns {
+  border: 2px solid #008a00;
+  background: lightgreen;
+}
+
+.cardContainer .cards .answersButtons .wrongAns {
+  border: 2px solid #e91919;
+  background: lightcoral;
+}
+
+.cardContainer .cards .answersButtons .anyAns {
+  border: 2px solid #ec6837;
+  background: #b6fff6;
 }
 
 .cardContainer .cards .nextButton {
