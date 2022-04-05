@@ -112,11 +112,11 @@ const QuestionCard: React.FC<Props> = (props: Props) => {
 
         {props.userAnswers.length === props.questionNum + 1 &&
         props.questionNum + 1 === props.selectedQuestionsNum ? (
-          <div>
-            <button onClick={() => props.setGameOver(true)}>
+          <div className="gameoverButtonsContainer">
+            <button className="showResultsButton" onClick={() => props.setGameOver(true)}>
               Show Results
             </button>
-            <button>
+            <button className="resetQuizButton">
               <a href="/">Reset Quiz</a>
             </button>
           </div>

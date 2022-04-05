@@ -274,6 +274,60 @@ h1 {
   margin: 20px auto 10px;
 }
 
+.cardContainer .cards .gameoverButtonsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cardContainer .cards .gameoverButtonsContainer .showResultsButton {
+  cursor: pointer;
+  border: 2px solid #635544;
+  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 10px 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f1e4e4), to(#ce811d));
+  background: linear-gradient(180deg, #f1e4e4, #ce811d);
+  font-weight: 600;
+  margin: 10px 0 15px;
+  background: #1bbaea;
+}
+
+.cardContainer .cards .gameoverButtonsContainer .resetQuizButton {
+  cursor: pointer;
+  border: 2px solid #635544;
+  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 10px 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f1e4e4), to(#ce811d));
+  background: linear-gradient(180deg, #f1e4e4, #ce811d);
+  font-weight: 600;
+}
+
+.cardContainer .cards .gameoverButtonsContainer .resetQuizButton a {
+  color: black;
+  text-decoration: none;
+}
+
 /*-------------------- Footer --------------------*/
 footer {
   text-align: center;
@@ -326,6 +380,9 @@ footer p {
     margin: 30px auto;
     width: 320px;
   }
+  .cardContainer {
+    height: 100%;
+  }
   .cardContainer .cards {
     margin: 30px auto;
     width: 320px;
@@ -374,9 +431,6 @@ footer p {
   }
   .homeForm form {
     margin: 50px auto;
-  }
-  .cardContainer {
-    height: 100%;
   }
   .cardContainer .cards {
     margin: 50px auto;
