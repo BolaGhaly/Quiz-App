@@ -32,7 +32,6 @@ const App = () => {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
-  const [correct, setCorrect] = useState(false);
 
   return (
     <>
@@ -78,7 +77,14 @@ const App = () => {
           setGameOver={setGameOver}
         />
       ) : null}
-      {gameOver && hideForm ? <GameOver /> : null}
+      {gameOver && hideForm ? (
+        <GameOver
+          score={score}
+          userAnswers={userAnswers}
+          totalQuestions={selectedQuestionsNum}
+          answers={questions[questionNum].answers}
+        />
+      ) : null}
       <Footer />
     </>
   );
