@@ -4,6 +4,7 @@ import "./styles/style.css";
 // Components
 import Home from "./components/Home";
 import QuestionCard from "./components/QuestionCard";
+import GameOver from "./components/ShowResults";
 import Footer from "./components/Footer";
 
 // Enum Types
@@ -59,7 +60,7 @@ const App = () => {
           <div></div>
         </div>
       ) : null}
-      {!loading && !gameOver && hideForm === true ? (
+      {!loading && !gameOver && hideForm ? (
         <QuestionCard
           selectedQuestionsNum={selectedQuestionsNum}
           questionNum={questionNum}
@@ -77,6 +78,7 @@ const App = () => {
           setGameOver={setGameOver}
         />
       ) : null}
+      {gameOver && hideForm ? <GameOver /> : null}
       <Footer />
     </>
   );

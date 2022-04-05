@@ -32,8 +32,6 @@ const QuestionCard: React.FC<Props> = (props: Props) => {
         props.questions[props.questionNum].correct_answer === answer;
 
       const scoreHTML = document.querySelector(".score");
-      
-      console.log(scoreHTML);
 
       // Add score if answer is correct
       if (isCorrect) {
@@ -51,16 +49,11 @@ const QuestionCard: React.FC<Props> = (props: Props) => {
 
       props.setUserAnswers((prev: any) => [...prev, answerObject]);
 
-       setTimeout(() => scoreHTML?.classList.remove("animate__animated", "animate__pulse"), 1500);
-    }
-  };
-
-  const nextQuestion = () => {
-    // Move on to the next question if not the last question
-    if (props.questionNum + 1 === props.selectedQuestionsNum) {
-      props.setGameOver(true);
-    } else {
-      props.setQuestionNum(props.questionNum + 1);
+      setTimeout(
+        () =>
+          scoreHTML?.classList.remove("animate__animated", "animate__pulse"),
+        1500
+      );
     }
   };
 
@@ -109,11 +102,25 @@ const QuestionCard: React.FC<Props> = (props: Props) => {
         {!props.gameOver &&
         props.userAnswers.length === props.questionNum + 1 &&
         props.questionNum !== props.selectedQuestionsNum - 1 ? (
-          <button className="nextButton" onClick={nextQuestion}>
+          <button
+            className="nextButton"
+            onClick={() => props.setQuestionNum(props.questionNum + 1)}
+          >
             Next Question
           </button>
         ) : null}
-        {props.gameOver ? console.log(props.userAnswers) : null}
+
+        {props.userAnswers.length === props.questionNum + 1 &&
+        props.questionNum + 1 === props.selectedQuestionsNum ? (
+          <div>
+            <button onClick={() => props.setGameOver(true)}>
+              Show Results
+            </button>
+            <button>
+              <a href="/">Reset Quiz</a>
+            </button>
+          </div>
+        ) : null}
       </div>
     </div>
   );
