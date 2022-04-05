@@ -250,6 +250,10 @@ h1 {
 .cardContainer .cards .answersButtons .anyAns {
   border: 2px solid #ec6837;
   background: #b6fff6;
+  -webkit-animation: fadeInDown;
+          animation: fadeInDown;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
 }
 
 .cardContainer .cards .nextButton {

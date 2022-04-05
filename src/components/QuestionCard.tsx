@@ -31,9 +31,14 @@ const QuestionCard: React.FC<Props> = (props: Props) => {
       const isCorrect =
         props.questions[props.questionNum].correct_answer === answer;
 
+      const scoreHTML = document.querySelector(".score");
+      
+      console.log(scoreHTML);
+
       // Add score if answer is correct
       if (isCorrect) {
         props.setScore((prev: any) => prev + 1);
+        scoreHTML?.classList.add("animate__animated", "animate__pulse");
       }
 
       // Save answer in the array for user answers
@@ -45,6 +50,8 @@ const QuestionCard: React.FC<Props> = (props: Props) => {
       };
 
       props.setUserAnswers((prev: any) => [...prev, answerObject]);
+
+       setTimeout(() => scoreHTML?.classList.remove("animate__animated", "animate__pulse"), 1500);
     }
   };
 
