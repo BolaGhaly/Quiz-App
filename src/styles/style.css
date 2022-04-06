@@ -5,6 +5,7 @@ font-family: 'Fascinate Inline', cursive;
 font-family: 'Poppins', sans-serif;
 */
 .dots {
+  background-color: rgba(106, 147, 167, 0.2);
   height: calc(100vh - 105px);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -97,6 +98,7 @@ h1 {
 
 /*-------------------- Home.tsx --------------------*/
 .homeForm {
+  background-color: rgba(106, 147, 167, 0.2);
   height: calc(100vh - 105px);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -170,6 +172,7 @@ h1 {
 
 /*-------------------- QuestionCard.tsx --------------------*/
 .cardContainer {
+  background-color: rgba(106, 147, 167, 0.2);
   height: calc(100vh - 105px);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -328,7 +331,56 @@ h1 {
   text-decoration: none;
 }
 
-/*-------------------- Footer --------------------*/
+/*-------------------- ShowResults.tsx --------------------*/
+.resContainer {
+  min-height: calc(100vh - 105px);
+  background-color: rgba(106, 147, 167, 0.2);
+  color: white;
+}
+
+.resContainer h4 {
+  text-shadow: black 0px 0px 2px;
+  font-size: 26px;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.resContainer .ansContainer {
+  padding: 0 25px 30px;
+}
+
+.resContainer .ansContainer .eachDiv {
+  margin-bottom: 25px;
+}
+
+.resContainer .ansContainer .eachDiv p {
+  font-size: 20px;
+}
+
+.resContainer .ansContainer .eachDiv button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: whitesmoke;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 6px 10px;
+  margin: 10px 0 15px;
+  -webkit-box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+          box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+  border-radius: 15px;
+  color: black;
+}
+
+/*-------------------- Footer.tsx --------------------*/
 footer {
   text-align: center;
   background-color: #eeeeee;

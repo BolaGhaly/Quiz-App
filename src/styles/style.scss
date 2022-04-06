@@ -32,6 +32,7 @@ $black-font-shadow: black 0px 0px 2px;
 
 //-------------------- Loader
 .dots {
+  background-color: rgba(106, 147, 167, 0.2);
   @include cardsContainer();
   margin: 0 auto;
 
@@ -83,11 +84,9 @@ html {
 
 body {
   // background-color: $ws-bg;
-  background-image: linear-gradient(
-      100deg,
+  background-image: linear-gradient(100deg,
       rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.8)
-    ),
+      rgba(0, 0, 0, 0.8)),
     url("../unsplash-bg.jpg");
   background-size: cover;
   background-position: center center;
@@ -108,6 +107,7 @@ h1 {
 
 /*-------------------- Home.tsx --------------------*/
 .homeForm {
+  background-color: rgba(106, 147, 167, 0.2);
   @include cardsContainer();
 
   p {
@@ -152,6 +152,7 @@ h1 {
 
 /*-------------------- QuestionCard.tsx --------------------*/
 .cardContainer {
+  background-color: rgba(106, 147, 167, 0.2);
   @include cardsContainer();
 
   .cards {
@@ -231,6 +232,7 @@ h1 {
 
       .resetQuizButton {
         @include myButtons();
+
         a {
           color: black;
           text-decoration: none;
@@ -240,7 +242,49 @@ h1 {
   }
 }
 
-/*-------------------- Footer --------------------*/
+/*-------------------- ShowResults.tsx --------------------*/
+.resContainer {
+  min-height: calc(100vh - 105px);
+  background-color: rgba(106, 147, 167, 0.2);
+  color: rgb(255, 255, 255);
+
+  // rgb(145, 255, 117)
+  h4 {
+    text-shadow: $black-font-shadow;
+    font-size: 26px;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .ansContainer {
+    padding: 0 25px 30px;
+
+    .eachDiv {
+      margin-bottom: 25px;
+
+      p {
+        font-size: 20px;
+      }
+
+      button {
+        display: flex;
+        flex-direction: column;
+        background-color: whitesmoke;
+        user-select: none;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 6px 10px;
+        margin: 10px 0 15px;
+        box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+        border-radius: 15px;
+        color: black;
+      }
+    }
+  }
+}
+
+
+/*-------------------- Footer.tsx --------------------*/
 footer {
   text-align: center;
   background-color: $ws-bg;
@@ -270,6 +314,7 @@ footer {
 
 /*-------------------- Media Queries --------------------*/
 @media screen and (max-width: 492px) {
+
   .homeForm,
   .dots,
   .cardContainer {
