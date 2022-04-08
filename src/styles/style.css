@@ -350,7 +350,7 @@ h1 {
 }
 
 .resContainer .ansContainer .eachDiv {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .resContainer .ansContainer .eachDiv .oneLine p {
@@ -359,7 +359,8 @@ h1 {
 }
 
 .resContainer .ansContainer .eachDiv .oneLine p span {
-  color: whitesmoke;
+  color: #eeeeee;
+  text-shadow: black 0px 0px 2px;
   padding-left: 10px;
 }
 

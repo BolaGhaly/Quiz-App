@@ -262,14 +262,16 @@ h1 {
     padding: 0 25px 30px;
 
     .eachDiv {
-      margin-bottom: 25px;
+      margin-bottom: 30px;
 
       .oneLine {
         p {
           position: relative;
           font-size: 20px;
+
           span {
-            color: whitesmoke;
+            color: $ws-bg;
+            text-shadow: $black-font-shadow;
             padding-left: 10px;
           }
         }
