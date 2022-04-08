@@ -12,7 +12,7 @@ type Props = {
 };
 
 const GameOver: React.FC<Props> = (props: Props) => {
-  // console.log("here 1 = ", props.answers);
+  console.log("here 1 = ", props.answers);
 
   return (
     <div className="resContainer">
@@ -22,12 +22,26 @@ const GameOver: React.FC<Props> = (props: Props) => {
       <div className="ansContainer">
         {props.userAnswers.map((e: any, index) => (
           <div key={index} className="eachDiv">
-            <p dangerouslySetInnerHTML={{ __html: e.question }} />
-            {props.answers.map((answer) => (
-              <button key={answer} className=" correctAns" disabled={true}>
+            {e.correct === true ? (
+              <div className="oneLine">
+                <p className="scoreOne">
+                  1 pt.
+                  <span dangerouslySetInnerHTML={{ __html: e.question }} />
+                </p>
+              </div>
+            ) : e.correct === false ? (
+              <div className="oneLine">
+                <p className="scoreZero">
+                  0 pt.
+                  <span dangerouslySetInnerHTML={{ __html: e.question }} />
+                </p>
+              </div>
+            ) : null}
+            {/* {props.answers.map((answer) => (
+              <button key={answer} className="correctAns" disabled={true}>
                 <span dangerouslySetInnerHTML={{ __html: answer }} />
               </button>
-            ))}
+            ))} */}
           </div>
         ))}
       </div>

@@ -353,8 +353,44 @@ h1 {
   margin-bottom: 25px;
 }
 
-.resContainer .ansContainer .eachDiv p {
+.resContainer .ansContainer .eachDiv .oneLine p {
+  position: relative;
   font-size: 20px;
+}
+
+.resContainer .ansContainer .eachDiv .oneLine p span {
+  color: whitesmoke;
+  padding-left: 10px;
+}
+
+.resContainer .ansContainer .eachDiv .oneLine .scoreOne {
+  color: #00ff5e;
+}
+
+.resContainer .ansContainer .eachDiv .oneLine .scoreZero {
+  color: #ee4b2b;
+}
+
+.resContainer .ansContainer .eachDiv .oneLine .scoreOne::before {
+  content: "";
+  z-index: -100;
+  left: 1px;
+  top: 24px;
+  position: absolute;
+  background: #00ff5e;
+  height: 2px;
+  width: 36px;
+}
+
+.resContainer .ansContainer .eachDiv .oneLine .scoreZero::before {
+  content: "";
+  z-index: -100;
+  left: 1px;
+  top: 24px;
+  position: absolute;
+  background: #ee4b2b;
+  height: 2px;
+  width: 42px;
 }
 
 .resContainer .ansContainer .eachDiv button {
@@ -365,7 +401,6 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: whitesmoke;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -378,6 +413,7 @@ h1 {
           box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
+  min-width: 260px;
 }
 
 /*-------------------- Footer.tsx --------------------*/
