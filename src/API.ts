@@ -9,9 +9,17 @@ export type Question = {
   question: string;
 };
 
-export type QuestionState = Question & {
+export type AnswerObject = Question & {
+  question: string;
+  answer: string;
+  correct: boolean;
+  correctAnswer: string;
   answers: string[];
 };
+
+// export type QuestionState = Question & {
+//   answers: string[];
+// };
 
 export const fetchQuizQuestions = async (
   amount: number,
