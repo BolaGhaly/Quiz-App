@@ -241,8 +241,8 @@ h1 {
 }
 
 .cardContainer .cards .answersButtons .wrongAns {
-  border: 2px solid #ff6464;
-  background: #ff2020;
+  border: 2px solid #ff2525;
+  background: #ee5a5a;
 }
 
 .cardContainer .cards .answersButtons .anyAns {
@@ -487,7 +487,7 @@ h1 {
   color: black;
   width: 280px;
   background: lightcoral;
-  border: 2px solid #ff6464;
+  border: 2px solid #ff2525;
 }
 
 /*-------------------- Footer.tsx --------------------*/

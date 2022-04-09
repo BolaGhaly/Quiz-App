@@ -5,7 +5,7 @@ $ws-bg: rgb(238, 238, 238);
 $black-font-shadow: black 0px 0px 2px;
 $light-blue: rgb(182, 255, 246);
 $light-green: rgb(0, 138, 0);
-$light-red: rgb(255, 100, 100);
+$light-red: rgb(255, 37, 37);
 $light-orange: rgb(236, 104, 55);
 
 //-------------------- Mixin
@@ -216,7 +216,7 @@ h1 {
 
       .wrongAns {
         border: 2px solid $light-red;
-        background: rgb(255, 32, 32);
+        background: rgb(238, 90, 90);
       }
 
       .anyAns {
