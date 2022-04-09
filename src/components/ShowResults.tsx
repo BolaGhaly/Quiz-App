@@ -13,10 +13,6 @@ type Props = {
 };
 
 const ShowResults: React.FC<Props> = (props: Props) => {
-  console.log("here 1 = ", props.answers);
-  console.log("here 2 = ", props.userAnswers);
-  console.log("here 3 = ", props.questionNum);
-
   return (
     <div className="resContainer">
       <h4>
@@ -59,8 +55,7 @@ const ShowResults: React.FC<Props> = (props: Props) => {
                     className={`${
                       answer === e.correctAnswer
                         ? "correctResBtn"
-                        : e.answer !== e.correctAnswer &&
-                          e.answer === answer
+                        : e.answer !== e.correctAnswer && e.answer === answer
                         ? "wrongResBtn"
                         : "anyResBtn"
                     }`}
