@@ -1,6 +1,6 @@
 import React, { SetStateAction, Dispatch } from "react";
-import { fetchQuizQuestions, QuestionState } from "../API";
-import { AnswerObject } from "../App";
+import { fetchQuizQuestions, AnswerObject } from "../API";
+// import { AnswerObject } from "../App";
 
 interface Props {
   selectedQuestionsNum: number;
@@ -12,7 +12,7 @@ interface Props {
   setHideForm: Dispatch<SetStateAction<boolean>>;
   setLoading: Dispatch<SetStateAction<boolean>>;
   setGameOver: Dispatch<SetStateAction<boolean>>;
-  setQuestions: Dispatch<SetStateAction<QuestionState[]>>;
+  setQuestions: Dispatch<SetStateAction<AnswerObject[]>>;
   setScore: Dispatch<SetStateAction<number>>;
   setUserAnswers: Dispatch<SetStateAction<AnswerObject[]>>;
   setQuestionNum: Dispatch<SetStateAction<number>>;

@@ -4,18 +4,18 @@ import "./styles/style.css";
 // Components
 import Home from "./components/Home";
 import QuestionCard from "./components/QuestionCard";
-import GameOver from "./components/ShowResults";
+import ShowResults from "./components/ShowResults";
 import Footer from "./components/Footer";
 
 // Enum Types
-import { QuestionState } from "./API";
+import { AnswerObject } from "./API";
 
-export type AnswerObject = {
-  question: string;
-  answer: string;
-  correct: boolean;
-  correctAnswer: string;
-};
+// export type AnswerObject = {
+//   question: string;
+//   answer: string;
+//   correct: boolean;
+//   correctAnswer: string;
+// };
 
 const App = () => {
   // Home - Form
@@ -27,7 +27,7 @@ const App = () => {
   const [loading, setLoading] = useState(false);
 
   // Questions - Cards
-  const [questions, setQuestions] = useState<QuestionState[]>([]);
+  const [questions, setQuestions] = useState<AnswerObject[]>([]);
   const [questionNum, setQuestionNum] = useState(0);
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
@@ -78,11 +78,13 @@ const App = () => {
         />
       ) : null}
       {gameOver && hideForm ? (
-        <GameOver
+        <ShowResults
+          questions={questions}
           score={score}
           userAnswers={userAnswers}
           totalQuestions={selectedQuestionsNum}
           answers={questions[questionNum].answers}
+          questionNum={questionNum}
         />
       ) : null}
       <Footer />
