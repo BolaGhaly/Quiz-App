@@ -5,7 +5,7 @@ $ws-bg: rgb(238, 238, 238);
 $black-font-shadow: black 0px 0px 2px;
 $light-blue: rgb(182, 255, 246);
 $light-green: rgb(0, 138, 0);
-$light-red: rgb(233, 25, 25);
+$light-red: rgb(255, 100, 100);
 $light-orange: rgb(236, 104, 55);
 
 //-------------------- Mixin
@@ -97,7 +97,6 @@ html {
 }
 
 body {
-  // background-color: $ws-bg;
   background-image: linear-gradient(100deg,
       rgba(0, 0, 0, 0.65),
       rgba(0, 0, 0, 0.8)),
@@ -217,7 +216,7 @@ h1 {
 
       .wrongAns {
         border: 2px solid $light-red;
-        background: lightcoral;
+        background: rgb(224, 50, 50);
       }
 
       .anyAns {
@@ -261,7 +260,6 @@ h1 {
   min-height: calc(100vh - 105px);
   background-color: rgba(106, 147, 167, 0.2);
   color: rgb(255, 255, 255);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
