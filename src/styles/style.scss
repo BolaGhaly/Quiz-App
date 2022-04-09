@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Poppins:wght@300;400;500;600;700&display=swap");
-/*
-Google Fonts...
-font-family: 'Fascinate Inline', cursive;
-font-family: 'Poppins', sans-serif;
-*/
 
 //-------------------- Variables
 $ws-bg: rgb(238, 238, 238);
 $black-font-shadow: black 0px 0px 2px;
+$light-blue: rgb(182, 255, 246);
+$light-green: rgb(0, 138, 0);
+$light-red: rgb(233, 25, 25);
+$light-orange: rgb(236, 104, 55);
 
 //-------------------- Mixin
 @mixin myButtons {
@@ -28,6 +27,21 @@ $black-font-shadow: black 0px 0px 2px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin showResultsButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 6px 20px;
+  margin: 10px 0 15px;
+  box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+  border-radius: 15px;
+  color: black;
+  width: 250px;
 }
 
 //-------------------- Loader
@@ -84,11 +98,9 @@ html {
 
 body {
   // background-color: $ws-bg;
-  background-image: linear-gradient(
-      100deg,
+  background-image: linear-gradient(100deg,
       rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.8)
-    ),
+      rgba(0, 0, 0, 0.8)),
     url("../unsplash-bg.jpg");
   background-size: cover;
   background-position: center center;
@@ -199,18 +211,18 @@ h1 {
       }
 
       .correctAns {
-        border: 2px solid rgb(0, 138, 0);
+        border: 2px solid $light-green;
         background: lightgreen;
       }
 
       .wrongAns {
-        border: 2px solid rgb(233, 25, 25);
+        border: 2px solid $light-red;
         background: lightcoral;
       }
 
       .anyAns {
-        border: 2px solid rgb(236, 104, 55);
-        background: rgb(182, 255, 246);
+        background: $light-blue;
+        border: 2px solid $light-orange;
         animation: fadeInDown;
         animation-duration: 2s;
       }
@@ -250,7 +262,6 @@ h1 {
   background-color: rgba(106, 147, 167, 0.2);
   color: rgb(255, 255, 255);
 
-  // rgb(145, 255, 117)
   h4 {
     text-shadow: $black-font-shadow;
     font-size: 26px;
@@ -259,7 +270,7 @@ h1 {
   }
 
   .ansContainer {
-    padding: 0 25px 30px;
+    padding: 0 25px 20px;
 
     .eachDiv {
       margin-bottom: 30px;
@@ -268,6 +279,7 @@ h1 {
         p {
           position: relative;
           font-size: 20px;
+          user-select: none;
 
           span {
             color: $ws-bg;
@@ -305,20 +317,24 @@ h1 {
           height: 2px;
           width: 42px;
         }
-      }
 
-      button {
-        display: flex;
-        flex-direction: column;
-        user-select: none;
-        font-size: 18px;
-        font-weight: 500;
-        padding: 6px 10px;
-        margin: 10px 0 15px;
-        box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
-        border-radius: 15px;
-        color: black;
-        min-width: 260px;
+        .anyResBtn {
+          @include showResultsButtons();
+          background: $light-blue;
+          border: 2px solid $light-orange;
+        }
+
+        .correctResBtn {
+          @include showResultsButtons();
+          background: lightgreen;
+          border: 2px solid $light-green;
+        }
+
+        .wrongResBtn {
+          @include showResultsButtons();
+          background: lightcoral;
+          border: 2px solid $light-red;
+        }
       }
     }
   }

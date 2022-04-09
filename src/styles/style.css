@@ -1,9 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Poppins:wght@300;400;500;600;700&display=swap");
-/*
-Google Fonts...
-font-family: 'Fascinate Inline', cursive;
-font-family: 'Poppins', sans-serif;
-*/
 .dots {
   background-color: rgba(106, 147, 167, 0.2);
   height: calc(100vh - 105px);
@@ -251,8 +246,8 @@ h1 {
 }
 
 .cardContainer .cards .answersButtons .anyAns {
-  border: 2px solid #ec6837;
   background: #b6fff6;
+  border: 2px solid #ec6837;
   -webkit-animation: fadeInDown;
           animation: fadeInDown;
   -webkit-animation-duration: 2s;
@@ -346,7 +341,7 @@ h1 {
 }
 
 .resContainer .ansContainer {
-  padding: 0 25px 30px;
+  padding: 0 25px 20px;
 }
 
 .resContainer .ansContainer .eachDiv {
@@ -356,6 +351,10 @@ h1 {
 .resContainer .ansContainer .eachDiv .oneLine p {
   position: relative;
   font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .resContainer .ansContainer .eachDiv .oneLine p span {
@@ -394,7 +393,7 @@ h1 {
   width: 42px;
 }
 
-.resContainer .ansContainer .eachDiv button {
+.resContainer .ansContainer .eachDiv .oneLine .anyResBtn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -402,19 +401,80 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   font-size: 18px;
   font-weight: 500;
-  padding: 6px 10px;
+  padding: 6px 20px;
   margin: 10px 0 15px;
   -webkit-box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
           box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
-  min-width: 260px;
+  width: 250px;
+  background: #b6fff6;
+  border: 2px solid #ec6837;
+}
+
+.resContainer .ansContainer .eachDiv .oneLine .correctResBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 6px 20px;
+  margin: 10px 0 15px;
+  -webkit-box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+          box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+  border-radius: 15px;
+  color: black;
+  width: 250px;
+  background: lightgreen;
+  border: 2px solid #008a00;
+}
+
+.resContainer .ansContainer .eachDiv .oneLine .wrongResBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 6px 20px;
+  margin: 10px 0 15px;
+  -webkit-box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+          box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+  border-radius: 15px;
+  color: black;
+  width: 250px;
+  background: lightcoral;
+  border: 2px solid #e91919;
 }
 
 /*-------------------- Footer.tsx --------------------*/
