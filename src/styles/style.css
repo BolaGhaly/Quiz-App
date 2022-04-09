@@ -331,6 +331,9 @@ h1 {
   min-height: calc(100vh - 105px);
   background-color: rgba(106, 147, 167, 0.2);
   color: white;
+}
+
+.resContainer .topContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,11 +349,33 @@ h1 {
           align-items: center;
 }
 
-.resContainer h4 {
+.resContainer .topContainer h4 {
   text-shadow: black 0px 0px 2px;
   font-size: 26px;
-  padding: 50px 20px;
-  text-align: center;
+  padding: 30px 20px;
+}
+
+.resContainer .topContainer .resetQuizButton {
+  cursor: pointer;
+  border: 2px solid #635544;
+  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 10px 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f1e4e4), to(#ce811d));
+  background: linear-gradient(180deg, #f1e4e4, #ce811d);
+  font-weight: 600;
+  margin: 0 auto 35px;
+}
+
+.resContainer .topContainer .resetQuizButton a {
+  color: black;
+  text-decoration: none;
 }
 
 .resContainer .ansContainer {

@@ -15,9 +15,14 @@ type Props = {
 const ShowResults: React.FC<Props> = (props: Props) => {
   return (
     <div className="resContainer">
-      <h4>
-        Score: {props.score} / {props.totalQuestions}
-      </h4>
+      <div className="topContainer">
+        <h4>
+          Score: {props.score} / {props.totalQuestions}
+        </h4>
+        <button className="resetQuizButton">
+          <a href="/">Reset Quiz</a>
+        </button>
+      </div>
       <div className="ansContainer">
         {props.userAnswers.map((e: any, index) => (
           <div key={index} className="eachDiv">
