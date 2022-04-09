@@ -1,18 +1,21 @@
 import React from "react";
 
 // Types
-import { AnswerObject } from "../App";
-import { QuestionState } from "../API";
+import { AnswerObject } from "../API";
 
 type Props = {
   score: number;
+  questionNum: number;
+  questions: AnswerObject[];
   totalQuestions: number;
   userAnswers: AnswerObject[];
   answers: string[];
 };
 
-const GameOver: React.FC<Props> = (props: Props) => {
+const ShowResults: React.FC<Props> = (props: Props) => {
   console.log("here 1 = ", props.answers);
+  console.log("here 2 = ", props.userAnswers);
+  console.log("here 3 = ", props.questionNum);
 
   return (
     <div className="resContainer">
@@ -28,6 +31,22 @@ const GameOver: React.FC<Props> = (props: Props) => {
                   1 pt.
                   <span dangerouslySetInnerHTML={{ __html: e.question }} />
                 </p>
+                {e.all_answers.map((answer: any) => (
+                  <button
+                    className={`${
+                      e.answer === e.correctAnswer && e.correctAnswer === answer
+                        ? "correctResBtn"
+                        : "anyResBtn"
+                    }`}
+                    disabled={true}
+                  >
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: answer,
+                      }}
+                    />
+                  </button>
+                ))}
               </div>
             ) : e.correct === false ? (
               <div className="oneLine">
@@ -35,13 +54,27 @@ const GameOver: React.FC<Props> = (props: Props) => {
                   0 pt.
                   <span dangerouslySetInnerHTML={{ __html: e.question }} />
                 </p>
+                {e.all_answers.map((answer: any) => (
+                  <button
+                    className={`${
+                      answer === e.correctAnswer
+                        ? "correctResBtn"
+                        : e.answer !== e.correctAnswer &&
+                          e.answer === answer
+                        ? "wrongResBtn"
+                        : "anyResBtn"
+                    }`}
+                    disabled={true}
+                  >
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: answer,
+                      }}
+                    />
+                  </button>
+                ))}
               </div>
             ) : null}
-            {/* {props.answers.map((answer) => (
-              <button key={answer} className="correctAns" disabled={true}>
-                <span dangerouslySetInnerHTML={{ __html: answer }} />
-              </button>
-            ))} */}
           </div>
         ))}
       </div>
@@ -49,4 +82,4 @@ const GameOver: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default GameOver;
+export default ShowResults;

@@ -1,15 +1,14 @@
 import React, { SetStateAction, Dispatch } from "react";
 
 // Types
-import { AnswerObject } from "../App";
-import { QuestionState } from "../API";
+import { AnswerObject } from "../API";
 
 type Props = {
   selectedQuestionsNum: number;
   questionNum: number;
   totalQuestions: number;
   question: string;
-  questions: QuestionState[];
+  questions: AnswerObject[];
   answers: string[];
   userAnswers: AnswerObject[];
   userAnswer: AnswerObject | undefined;
@@ -45,6 +44,7 @@ const QuestionCard: React.FC<Props> = (props: Props) => {
         answer: answer,
         correct: isCorrect,
         correctAnswer: props.questions[props.questionNum].correct_answer,
+        all_answers: props.answers,
       };
 
       props.setUserAnswers((prev: any) => [...prev, answerObject]);
@@ -113,7 +113,10 @@ const QuestionCard: React.FC<Props> = (props: Props) => {
         {props.userAnswers.length === props.questionNum + 1 &&
         props.questionNum + 1 === props.selectedQuestionsNum ? (
           <div className="gameoverButtonsContainer">
-            <button className="showResultsButton" onClick={() => props.setGameOver(true)}>
+            <button
+              className="showResultsButton"
+              onClick={() => props.setGameOver(true)}
+            >
               Show Results
             </button>
             <button className="resetQuizButton">
