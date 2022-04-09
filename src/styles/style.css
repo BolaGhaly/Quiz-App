@@ -331,6 +331,19 @@ h1 {
   min-height: calc(100vh - 105px);
   background-color: rgba(106, 147, 167, 0.2);
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .resContainer h4 {
@@ -416,7 +429,7 @@ h1 {
           box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
-  width: 200px;
+  width: 280px;
   background: #b6fff6;
   border: 2px solid #ec6837;
 }
@@ -444,7 +457,7 @@ h1 {
           box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
-  width: 200px;
+  width: 280px;
   background: lightgreen;
   border: 2px solid #008a00;
 }
@@ -472,7 +485,7 @@ h1 {
           box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
-  width: 200px;
+  width: 280px;
   background: lightcoral;
   border: 2px solid #e91919;
 }
@@ -529,16 +542,21 @@ footer p {
     margin: 30px auto;
     width: 320px;
   }
-  .cardContainer {
-    height: 100%;
-  }
   .cardContainer .cards {
     margin: 30px auto;
     width: 320px;
   }
+  .resContainer .ansContainer {
+    padding: 0 10px 20px;
+  }
+  .resContainer .ansContainer .eachDiv .oneLine .anyResBtn,
+  .resContainer .ansContainer .eachDiv .oneLine .correctResBtn,
+  .resContainer .ansContainer .eachDiv .oneLine .wrongResBtn {
+    width: 220px;
+  }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 325px) {
   .homeForm form {
     width: 300px;
   }
@@ -553,6 +571,15 @@ footer p {
   }
   .cardContainer .cards {
     width: 270px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .homeForm form {
+    width: 250px;
+  }
+  .cardContainer .cards {
+    width: 250px;
   }
 }
 
