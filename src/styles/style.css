@@ -1,4 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Poppins:wght@300;400;500;600;700&display=swap");
+/*-------------------- Base HTML --------------------*/
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: linear-gradient(100deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.8)), url("../unsplash-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-family: "Fascinate Inline", cursive;
+  -webkit-filter: drop-shadow(4px 2px #1bbaea);
+          filter: drop-shadow(4px 2px #1bbaea);
+  font-size: 40px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .dots {
   background-color: rgba(106, 147, 167, 0.2);
   height: calc(100vh - 105px);
@@ -52,43 +89,6 @@
   to {
     opacity: 0;
   }
-}
-
-/*-------------------- Base HTML --------------------*/
-*,
-*:after,
-*:before {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-image: linear-gradient(100deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.8)), url("../unsplash-bg.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  font-family: "Poppins", sans-serif;
-}
-
-h1 {
-  font-family: "Fascinate Inline", cursive;
-  -webkit-filter: drop-shadow(4px 2px #1bbaea);
-          filter: drop-shadow(4px 2px #1bbaea);
-  font-size: 40px;
-  letter-spacing: 1px;
-  text-align: center;
-  margin-bottom: 10px;
 }
 
 /*-------------------- Home.tsx --------------------*/
