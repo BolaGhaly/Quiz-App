@@ -270,12 +270,12 @@ h1 {
     h4 {
       text-shadow: $black-font-shadow;
       font-size: 26px;
-      padding: 30px 20px;
+      padding: 5px 20px 35px;
     }
 
     .resetQuizButton {
       @include myButtons();
-      margin: 0 auto 35px;
+      margin: 30px auto 20px;
 
       a {
         color: black;

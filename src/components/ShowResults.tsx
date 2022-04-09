@@ -16,12 +16,12 @@ const ShowResults: React.FC<Props> = (props: Props) => {
   return (
     <div className="resContainer">
       <div className="topContainer">
-        <h4>
-          Score: {props.score} / {props.totalQuestions}
-        </h4>
         <button className="resetQuizButton">
           <a href="/">Reset Quiz</a>
         </button>
+        <h4>
+          Score: {props.score} / {props.totalQuestions}
+        </h4>
       </div>
       <div className="ansContainer">
         {props.userAnswers.map((e: any, index) => (

@@ -352,7 +352,7 @@ h1 {
 .resContainer .topContainer h4 {
   text-shadow: black 0px 0px 2px;
   font-size: 26px;
-  padding: 30px 20px;
+  padding: 5px 20px 35px;
 }
 
 .resContainer .topContainer .resetQuizButton {
@@ -370,7 +370,7 @@ h1 {
   background: -webkit-gradient(linear, left top, left bottom, from(#f1e4e4), to(#ce811d));
   background: linear-gradient(180deg, #f1e4e4, #ce811d);
   font-weight: 600;
-  margin: 0 auto 35px;
+  margin: 30px auto 20px;
 }
 
 .resContainer .topContainer .resetQuizButton a {
