@@ -17,10 +17,6 @@ export type AnswerObject = Question & {
   answers: string[];
 };
 
-// export type QuestionState = Question & {
-//   answers: string[];
-// };
-
 export const fetchQuizQuestions = async (
   amount: number,
   category: string,
@@ -29,8 +25,6 @@ export const fetchQuizQuestions = async (
 ) => {
   const response = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&category=${category}&type=multiple`;
   const data = await (await fetch(response)).json();
-
-  console.log("data = ", data);
 
   if (data.results.length === 0) {
     setSelectedQuestionsNum(10);
