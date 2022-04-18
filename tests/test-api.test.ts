@@ -5,7 +5,8 @@ import { expect } from "chai";
 import "mocha";
 
 let isEmpty: boolean;
-let categoriesNum: string[] = [
+
+const categoriesVal: string[] = [
   "",
   "9",
   "10",
@@ -33,7 +34,7 @@ let categoriesNum: string[] = [
   "28",
 ];
 
-let categoriesName: string[] = [
+const categoriesStr: string[] = [
   "Any Category",
   "General Knowledge",
   "Entertainment: Books",
@@ -61,10 +62,14 @@ let categoriesName: string[] = [
   "Vehicles",
 ];
 
+const difficultiesVal: string[] = ["", "easy", "medium", "hard"];
+
+const difficultiesStr: string[] = ["Any Difficulty", "Easy", "Medium", "Hard"];
+
 describe("Testing API...", () => {
-  it("should return 1-50 for the num of questions", async () => {
+  it("should return 1-50 for the num of questions for any category and difficulty", async () => {
     for (let i = 0; i < 50; i++) {
-      const response: any = `https://opentdb.com/api.php?amount=${i}`;
+      const response: any = `https://opentdb.com/api.php?amount=${i}&type=multiple`;
       const data: any = await (await fetch(response)).json();
       isEmpty = data.results.length === 0;
     }
@@ -73,7 +78,7 @@ describe("Testing API...", () => {
     expect(isEmpty).to.be.false;
   });
 
-  it("should return true if categoriesNum and categoriesName string arrays are of the same length", () => {
-    expect(categoriesNum.length === categoriesName.length).to.be.true;
+  it("should return true if categoriesVal and categoriesStr arrays are of the same length", () => {
+    expect(categoriesVal.length === categoriesStr.length).to.be.true;
   });
 });
