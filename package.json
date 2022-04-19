@@ -8,7 +8,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test-api": "mocha --timeout 10000 -r ts-node/register src/tests/test-api.test.ts"
+    "test-api": "mocha --timeout 100000000 -r ts-node/register src/tests/test-api.test.ts"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
