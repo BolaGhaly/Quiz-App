@@ -81,4 +81,8 @@ describe("Testing API...", () => {
   it("should return true if categoriesVal and categoriesStr arrays are of the same length", () => {
     expect(categoriesVal.length === categoriesStr.length).to.be.true;
   });
+
+  it("should return true if difficultiesVal and difficultiesStr arrays are of the same length", () => {
+    expect(difficultiesVal.length === difficultiesStr.length).to.be.true;
+  });
 });
