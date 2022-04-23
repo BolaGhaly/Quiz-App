@@ -140,6 +140,8 @@ h1 {
 
 .homeForm form input,
 .homeForm form select {
+  color: black;
+  background-color: #eeeeee;
   padding: 8px;
   margin-left: 5px;
   margin-bottom: 30px;

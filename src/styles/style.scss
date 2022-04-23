@@ -153,6 +153,8 @@ h1 {
 
   form input,
   form select {
+    color: black;
+    background-color: $ws-bg;
     padding: 8px;
     margin-left: 5px;
     margin-bottom: 30px;
