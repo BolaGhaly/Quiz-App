@@ -624,6 +624,9 @@ footer p {
   .homeForm form {
     margin: 50px auto;
   }
+  .cardContainer {
+    height: 100%;
+  }
 }
 
 @media screen and (max-width: 667px) and (max-height: 375px) {
