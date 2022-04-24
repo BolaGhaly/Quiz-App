@@ -577,6 +577,9 @@ footer p {
     margin: 30px auto;
     width: 320px;
   }
+  .cardContainer {
+    height: 100%;
+  }
   .cardContainer .cards {
     margin: 30px auto;
     width: 320px;

@@ -422,6 +422,8 @@ footer {
   }
 
   .cardContainer {
+    height: 100%;
+
     .cards {
       margin: 30px auto;
       width: 320px;
@@ -434,6 +436,7 @@ footer {
 
       .eachDiv {
         .oneLine {
+
           .anyResBtn,
           .correctResBtn,
           .wrongResBtn {
