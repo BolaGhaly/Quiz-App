@@ -461,7 +461,7 @@ h1 {
           box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
-  width: 280px;
+  width: 300px;
   background: #b6fff6;
   border: 2px solid #ec6837;
 }
@@ -489,7 +489,7 @@ h1 {
           box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
-  width: 280px;
+  width: 300px;
   background: lightgreen;
   border: 2px solid #008a00;
 }
@@ -517,7 +517,7 @@ h1 {
           box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
-  width: 280px;
+  width: 300px;
   background: lightcoral;
   border: 2px solid #ff2525;
 }
@@ -545,7 +545,7 @@ h1 {
   .resContainer .ansContainer .eachDiv .oneLine .anyResBtn,
   .resContainer .ansContainer .eachDiv .oneLine .correctResBtn,
   .resContainer .ansContainer .eachDiv .oneLine .wrongResBtn {
-    width: 220px;
+    width: 280px;
   }
 }
 
@@ -556,6 +556,11 @@ h1 {
   .cardContainer .cards {
     width: 300px;
   }
+  .resContainer .ansContainer .eachDiv .oneLine .anyResBtn,
+  .resContainer .ansContainer .eachDiv .oneLine .correctResBtn,
+  .resContainer .ansContainer .eachDiv .oneLine .wrongResBtn {
+    width: 250px;
+  }
 }
 
 @media screen and (max-width: 315px) {
@@ -565,6 +570,11 @@ h1 {
   .cardContainer .cards {
     width: 270px;
   }
+  .resContainer .ansContainer .eachDiv .oneLine .anyResBtn,
+  .resContainer .ansContainer .eachDiv .oneLine .correctResBtn,
+  .resContainer .ansContainer .eachDiv .oneLine .wrongResBtn {
+    width: 225px;
+  }
 }
 
 @media screen and (max-width: 280px) {
@@ -573,6 +583,11 @@ h1 {
   }
   .cardContainer .cards {
     width: 250px;
+  }
+  .resContainer .ansContainer .eachDiv .oneLine .anyResBtn,
+  .resContainer .ansContainer .eachDiv .oneLine .correctResBtn,
+  .resContainer .ansContainer .eachDiv .oneLine .wrongResBtn {
+    width: 200px;
   }
 }
 

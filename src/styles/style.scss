@@ -42,7 +42,7 @@ $light-orange: rgb(236, 104, 55);
   box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
-  width: 280px;
+  width: 300px;
 }
 
 @mixin scoresBefore {
@@ -392,11 +392,10 @@ h1 {
     .ansContainer {
       .eachDiv {
         .oneLine {
-
           .anyResBtn,
           .correctResBtn,
           .wrongResBtn {
-            width: 220px;
+            width: 280px;
           }
         }
       }
@@ -416,6 +415,20 @@ h1 {
       width: 300px;
     }
   }
+
+  .resContainer {
+    .ansContainer {
+      .eachDiv {
+        .oneLine {
+          .anyResBtn,
+          .correctResBtn,
+          .wrongResBtn {
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 315px) {
@@ -430,6 +443,20 @@ h1 {
       width: 270px;
     }
   }
+
+  .resContainer {
+    .ansContainer {
+      .eachDiv {
+        .oneLine {
+          .anyResBtn,
+          .correctResBtn,
+          .wrongResBtn {
+            width: 225px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 280px) {
@@ -442,6 +469,20 @@ h1 {
   .cardContainer {
     .cards {
       width: 250px;
+    }
+  }
+
+  .resContainer {
+    .ansContainer {
+      .eachDiv {
+        .oneLine {
+          .anyResBtn,
+          .correctResBtn,
+          .wrongResBtn {
+            width: 200px;
+          }
+        }
+      }
     }
   }
 }
