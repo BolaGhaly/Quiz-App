@@ -45,6 +45,15 @@ $light-orange: rgb(236, 104, 55);
   width: 280px;
 }
 
+@mixin scoresBefore {
+  content: "";
+  z-index: -100;
+  left: 1px;
+  top: 24px;
+  position: absolute;
+  height: 2px;
+}
+
 /*-------------------- Base HTML --------------------*/
 *,
 *:after,
@@ -315,24 +324,14 @@ h1 {
         }
 
         .scoreOne::before {
-          content: "";
-          z-index: -100;
-          left: 1px;
-          top: 24px;
-          position: absolute;
+          @include scoresBefore();
           background: rgb(0, 255, 94);
-          height: 2px;
           width: 36px;
         }
 
         .scoreZero::before {
-          content: "";
-          z-index: -100;
-          left: 1px;
-          top: 24px;
-          position: absolute;
+          @include scoresBefore();
           background: rgb(255, 64, 64);
-          height: 2px;
           width: 42px;
         }
 
@@ -393,6 +392,7 @@ h1 {
     .ansContainer {
       .eachDiv {
         .oneLine {
+
           .anyResBtn,
           .correctResBtn,
           .wrongResBtn {
