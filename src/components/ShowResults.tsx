@@ -32,8 +32,9 @@ const ShowResults: React.FC<Props> = (props: Props) => {
                   1 pt.
                   <span dangerouslySetInnerHTML={{ __html: e.question }} />
                 </p>
-                {e.all_answers.map((answer: any) => (
+                {e.all_answers.map((answer: any, index: number) => (
                   <button
+                    key={index}
                     className={`${
                       e.answer === e.correctAnswer && e.correctAnswer === answer
                         ? "correctResBtn"
@@ -55,8 +56,9 @@ const ShowResults: React.FC<Props> = (props: Props) => {
                   0 pt.
                   <span dangerouslySetInnerHTML={{ __html: e.question }} />
                 </p>
-                {e.all_answers.map((answer: any) => (
+                {e.all_answers.map((answer: any, index: number) => (
                   <button
+                    key={index}
                     className={`${
                       answer === e.correctAnswer
                         ? "correctResBtn"
