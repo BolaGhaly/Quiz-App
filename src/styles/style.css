@@ -413,7 +413,7 @@ h1 {
 }
 
 .resContainer .ansContainer .eachDiv .oneLine .scoreZero {
-  color: #ee4b2b;
+  color: #ff4040;
 }
 
 .resContainer .ansContainer .eachDiv .oneLine .scoreOne::before {
@@ -433,7 +433,7 @@ h1 {
   left: 1px;
   top: 24px;
   position: absolute;
-  background: #ee4b2b;
+  background: #ff4040;
   height: 2px;
   width: 42px;
 }
@@ -549,7 +549,7 @@ h1 {
   }
 }
 
-@media screen and (max-width: 325px) {
+@media screen and (max-width: 335px) {
   .homeForm form {
     width: 300px;
   }
@@ -558,7 +558,7 @@ h1 {
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 315px) {
   .homeForm form {
     width: 270px;
   }
@@ -576,12 +576,9 @@ h1 {
   }
 }
 
-@media screen and (max-width: 1024px) and (max-height: 600px) {
-  .homeForm {
-    height: 100%;
-  }
+@media screen and (max-width: 1440px) and (max-height: 600px) {
   .homeForm form {
-    margin: 50px auto;
+    margin: 25px auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
