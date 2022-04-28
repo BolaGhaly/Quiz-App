@@ -9,23 +9,12 @@ import ShowResults from "./components/ShowResults";
 // Enum Types
 import { AnswerObject } from "./API";
 
-// export type AnswerObject = {
-//   question: string;
-//   answer: string;
-//   correct: boolean;
-//   correctAnswer: string;
-// };
-
 const App = () => {
-  // Home - Form
   const [selectedQuestionsNum, setSelectedQuestionsNum] = useState(10);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDiff, setSelectedDiff] = useState("");
   const [hideForm, setHideForm] = useState(false);
-
   const [loading, setLoading] = useState(false);
-
-  // Questions - Cards
   const [questions, setQuestions] = useState<AnswerObject[]>([]);
   const [questionNum, setQuestionNum] = useState(0);
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
