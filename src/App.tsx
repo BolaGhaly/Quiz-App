@@ -5,7 +5,6 @@ import "./styles/style.css";
 import Home from "./components/Home";
 import QuestionCard from "./components/QuestionCard";
 import ShowResults from "./components/ShowResults";
-import Footer from "./components/Footer";
 
 // Enum Types
 import { AnswerObject } from "./API";
@@ -87,7 +86,6 @@ const App = () => {
           questionNum={questionNum}
         />
       ) : null}
-      <Footer />
     </>
   );
 };
