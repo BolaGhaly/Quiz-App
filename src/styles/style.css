@@ -38,7 +38,7 @@ h1 {
 
 .dots {
   background-color: rgba(106, 147, 167, 0.2);
-  height: calc(100vh - 105px);
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94,7 +94,7 @@ h1 {
 /*-------------------- Home.tsx --------------------*/
 .homeForm {
   background-color: rgba(106, 147, 167, 0.2);
-  height: calc(100vh - 105px);
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,7 +171,7 @@ h1 {
 /*-------------------- QuestionCard.tsx --------------------*/
 .cardContainer {
   background-color: rgba(106, 147, 167, 0.2);
-  height: calc(100vh - 105px);
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -334,7 +334,7 @@ h1 {
 
 /*-------------------- ShowResults.tsx --------------------*/
 .resContainer {
-  min-height: calc(100vh - 105px);
+  min-height: 100vh;
   background-color: rgba(106, 147, 167, 0.2);
   color: white;
 }
@@ -386,7 +386,7 @@ h1 {
 }
 
 .resContainer .ansContainer {
-  padding: 0 25px 20px;
+  margin: 0 25px 16px;
 }
 
 .resContainer .ansContainer .eachDiv {
@@ -523,14 +523,6 @@ h1 {
 }
 
 /*-------------------- Media Queries --------------------*/
-@media screen and (max-width: 492px) {
-  .homeForm,
-  .dots,
-  .cardContainer {
-    height: calc(100vh - 132px);
-  }
-}
-
 @media screen and (max-width: 425px) {
   .homeForm form {
     width: 360px;
@@ -541,23 +533,14 @@ h1 {
 }
 
 @media screen and (max-width: 375px) {
-  .homeForm {
-    height: 100%;
-  }
   .homeForm form {
     padding: 10px;
     margin: 30px auto;
     width: 320px;
   }
-  .cardContainer {
-    height: 100%;
-  }
   .cardContainer .cards {
     margin: 30px auto;
     width: 320px;
-  }
-  .resContainer .ansContainer {
-    padding: 0 10px 20px;
   }
   .resContainer .ansContainer .eachDiv .oneLine .anyResBtn,
   .resContainer .ansContainer .eachDiv .oneLine .correctResBtn,
