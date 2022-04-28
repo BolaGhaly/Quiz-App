@@ -386,11 +386,11 @@ h1 {
 }
 
 .resContainer .ansContainer {
-  margin: 0 25px 16px;
+  padding: 0 25px 16px;
 }
 
 .resContainer .ansContainer .eachDiv {
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .resContainer .ansContainer .eachDiv .oneLine p {
