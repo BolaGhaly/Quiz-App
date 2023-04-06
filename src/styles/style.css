@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  background-image: linear-gradient(100deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.8)), url("../unsplash-bg.jpg");
+  background-image: linear-gradient(100deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.8)), url("../unsplash-bg.jpeg");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -28,8 +28,7 @@ body {
 
 h1 {
   font-family: "Fascinate Inline", cursive;
-  -webkit-filter: drop-shadow(4px 2px #1bbaea);
-          filter: drop-shadow(4px 2px #1bbaea);
+  filter: drop-shadow(4px 2px #1bbaea);
   font-size: 40px;
   letter-spacing: 1px;
   text-align: center;
@@ -39,47 +38,25 @@ h1 {
 .dots {
   background-color: rgba(106, 147, 167, 0.2);
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 }
-
 .dots div {
   width: 0.8em;
   height: 0.8em;
   margin-left: 12px;
   border-radius: 50%;
-  background-color: #eeeeee;
-  -webkit-filter: drop-shadow(0px 0px 2px black);
-          filter: drop-shadow(0px 0px 2px black);
-  -webkit-animation: fade 0.8s ease-in-out alternate infinite;
-          animation: fade 0.8s ease-in-out alternate infinite;
+  background-color: rgb(238, 238, 238);
+  filter: drop-shadow(0px 0px 2px black);
+  animation: fade 0.8s ease-in-out alternate infinite;
 }
-
 .dots div:nth-of-type(1) {
-  -webkit-animation-delay: -0.4s;
-          animation-delay: -0.4s;
+  animation-delay: -0.4s;
 }
-
 .dots div:nth-of-type(2) {
-  -webkit-animation-delay: -0.2s;
-          animation-delay: -0.2s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  animation-delay: -0.2s;
 }
 
 @keyframes fade {
@@ -90,58 +67,39 @@ h1 {
     opacity: 0;
   }
 }
-
 /*-------------------- Home.tsx --------------------*/
 .homeForm {
   background-color: rgba(106, 147, 167, 0.2);
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .homeForm p {
   margin: 0 0 20px 5px;
   font-weight: 500;
 }
-
 .homeForm p span {
   color: red;
 }
-
 .homeForm form {
   width: 400px;
   border-radius: 20px;
   margin: auto;
   padding: 15px;
-  background-color: #eeeeee;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: rgb(238, 238, 238);
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
 }
-
 .homeForm form label {
   margin: 0 0 5px 5px;
   font-weight: 600;
 }
-
 .homeForm form input,
 .homeForm form select {
   color: black;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 8px;
   margin-left: 5px;
   margin-bottom: 30px;
@@ -149,22 +107,18 @@ h1 {
   font-size: 15px;
   font-weight: 500;
 }
-
 .homeForm .startButton {
   cursor: pointer;
-  border: 2px solid #635544;
-  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
-          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgb(99, 85, 68);
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   margin: 0 auto;
   padding: 10px 40px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 16px;
   color: black;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f1e4e4), to(#ce811d));
-  background: linear-gradient(180deg, #f1e4e4, #ce811d);
+  background: linear-gradient(180deg, rgb(241, 228, 228), rgb(206, 129, 29));
   font-weight: 600;
 }
 
@@ -172,161 +126,114 @@ h1 {
 .cardContainer {
   background-color: rgba(106, 147, 167, 0.2);
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .cardContainer .cards {
   width: 400px;
   border-radius: 20px;
   margin: auto;
   padding: 15px;
-  background-color: #eeeeee;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: rgb(238, 238, 238);
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
 }
-
 .cardContainer .cards h4 {
   font-size: 20px;
   font-weight: 600;
   text-align: center;
 }
-
 .cardContainer .cards p {
   margin-top: 10px;
   font-size: 18px;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   margin-bottom: 20px;
 }
-
 .cardContainer .cards .answersButtons :hover {
   opacity: 0.8;
 }
-
 .cardContainer .cards .answersButtons button {
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   font-size: 18px;
   font-weight: 500;
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
-  -webkit-box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
-          box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+  box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
 }
-
 .cardContainer .cards .answersButtons .correctAns {
-  border: 2px solid #008a00;
+  border: 2px solid rgb(0, 138, 0);
   background: lightgreen;
 }
-
 .cardContainer .cards .answersButtons .wrongAns {
-  border: 2px solid #ff2525;
-  background: #ee5a5a;
+  border: 2px solid rgb(255, 37, 37);
+  background: rgb(238, 90, 90);
 }
-
 .cardContainer .cards .answersButtons .anyAns {
-  background: #b6fff6;
-  border: 2px solid #ec6837;
-  -webkit-animation: fadeInDown;
-          animation: fadeInDown;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  background: rgb(182, 255, 246);
+  border: 2px solid rgb(236, 104, 55);
+  animation: fadeInDown;
+  animation-duration: 2s;
 }
-
 .cardContainer .cards .nextButton {
   cursor: pointer;
-  border: 2px solid #635544;
-  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
-          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgb(99, 85, 68);
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   margin: 0 auto;
   padding: 10px 40px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 16px;
   color: black;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f1e4e4), to(#ce811d));
-  background: linear-gradient(180deg, #f1e4e4, #ce811d);
+  background: linear-gradient(180deg, rgb(241, 228, 228), rgb(206, 129, 29));
   font-weight: 600;
   margin: 20px auto 10px;
 }
-
 .cardContainer .cards .gameoverButtonsContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  flex-direction: column;
 }
-
 .cardContainer .cards .gameoverButtonsContainer .showResultsButton {
   cursor: pointer;
-  border: 2px solid #635544;
-  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
-          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgb(99, 85, 68);
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   margin: 0 auto;
   padding: 10px 40px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 16px;
   color: black;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f1e4e4), to(#ce811d));
-  background: linear-gradient(180deg, #f1e4e4, #ce811d);
+  background: linear-gradient(180deg, rgb(241, 228, 228), rgb(206, 129, 29));
   font-weight: 600;
   margin: 10px 0 15px;
   background: #1bbaea;
 }
-
 .cardContainer .cards .gameoverButtonsContainer .resetQuizButton {
   cursor: pointer;
-  border: 2px solid #635544;
-  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
-          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgb(99, 85, 68);
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   margin: 0 auto;
   padding: 10px 40px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 16px;
   color: black;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f1e4e4), to(#ce811d));
-  background: linear-gradient(180deg, #f1e4e4, #ce811d);
+  background: linear-gradient(180deg, rgb(241, 228, 228), rgb(206, 129, 29));
   font-weight: 600;
 }
-
 .cardContainer .cards .gameoverButtonsContainer .resetQuizButton a {
   color: black;
   text-decoration: none;
@@ -336,86 +243,62 @@ h1 {
 .resContainer {
   min-height: 100vh;
   background-color: rgba(106, 147, 167, 0.2);
-  color: white;
+  color: rgb(255, 255, 255);
 }
-
 .resContainer .topContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 .resContainer .topContainer h4 {
   text-shadow: black 0px 0px 2px;
   font-size: 26px;
   padding: 5px 20px 35px;
 }
-
 .resContainer .topContainer .resetQuizButton {
   cursor: pointer;
-  border: 2px solid #635544;
-  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
-          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgb(99, 85, 68);
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   margin: 0 auto;
   padding: 10px 40px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 16px;
   color: black;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f1e4e4), to(#ce811d));
-  background: linear-gradient(180deg, #f1e4e4, #ce811d);
+  background: linear-gradient(180deg, rgb(241, 228, 228), rgb(206, 129, 29));
   font-weight: 600;
   margin: 30px auto 20px;
 }
-
 .resContainer .topContainer .resetQuizButton a {
   color: black;
   text-decoration: none;
 }
-
 .resContainer .ansContainer {
   padding: 0 25px 16px;
 }
-
 .resContainer .ansContainer .eachDiv {
   padding-bottom: 30px;
 }
-
 .resContainer .ansContainer .eachDiv .oneLine p {
   position: relative;
   font-size: 20px;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
-
 .resContainer .ansContainer .eachDiv .oneLine p span {
-  color: #eeeeee;
+  color: rgb(238, 238, 238);
   text-shadow: black 0px 0px 2px;
   padding-left: 10px;
 }
-
 .resContainer .ansContainer .eachDiv .oneLine .scoreOne {
-  color: #00ff5e;
+  color: rgb(0, 255, 94);
 }
-
 .resContainer .ansContainer .eachDiv .oneLine .scoreZero {
-  color: #ff4040;
+  color: rgb(255, 64, 64);
 }
-
 .resContainer .ansContainer .eachDiv .oneLine .scoreOne::before {
   content: "";
   z-index: -100;
@@ -423,10 +306,9 @@ h1 {
   top: 24px;
   position: absolute;
   height: 2px;
-  background: #00ff5e;
+  background: rgb(0, 255, 94);
   width: 36px;
 }
-
 .resContainer .ansContainer .eachDiv .oneLine .scoreZero::before {
   content: "";
   z-index: -100;
@@ -434,92 +316,62 @@ h1 {
   top: 24px;
   position: absolute;
   height: 2px;
-  background: #ff4040;
+  background: rgb(255, 64, 64);
   width: 42px;
 }
-
 .resContainer .ansContainer .eachDiv .oneLine .anyResBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   font-size: 18px;
   font-weight: 500;
   padding: 6px 20px;
   margin: 10px 0 15px;
-  -webkit-box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
-          box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+  box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
   width: 300px;
-  background: #b6fff6;
-  border: 2px solid #ec6837;
+  background: rgb(182, 255, 246);
+  border: 2px solid rgb(236, 104, 55);
 }
-
 .resContainer .ansContainer .eachDiv .oneLine .correctResBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   font-size: 18px;
   font-weight: 500;
   padding: 6px 20px;
   margin: 10px 0 15px;
-  -webkit-box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
-          box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+  box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
   width: 300px;
   background: lightgreen;
-  border: 2px solid #008a00;
+  border: 2px solid rgb(0, 138, 0);
 }
-
 .resContainer .ansContainer .eachDiv .oneLine .wrongResBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   font-size: 18px;
   font-weight: 500;
   padding: 6px 20px;
   margin: 10px 0 15px;
-  -webkit-box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
-          box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
+  box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
   border-radius: 15px;
   color: black;
   width: 300px;
   background: lightcoral;
-  border: 2px solid #ff2525;
+  border: 2px solid rgb(255, 37, 37);
 }
 
 /*-------------------- Media Queries --------------------*/
@@ -531,7 +383,6 @@ h1 {
     width: 360px;
   }
 }
-
 @media screen and (max-width: 375px) {
   .homeForm form {
     padding: 10px;
@@ -548,7 +399,6 @@ h1 {
     width: 280px;
   }
 }
-
 @media screen and (max-width: 335px) {
   .homeForm form {
     width: 300px;
@@ -562,7 +412,6 @@ h1 {
     width: 250px;
   }
 }
-
 @media screen and (max-width: 315px) {
   .homeForm form {
     width: 270px;
@@ -576,7 +425,6 @@ h1 {
     width: 225px;
   }
 }
-
 @media screen and (max-width: 280px) {
   .homeForm form {
     width: 250px;
@@ -590,10 +438,8 @@ h1 {
     width: 200px;
   }
 }
-
 @media screen and (max-width: 1440px) and (max-height: 600px) {
   .homeForm form {
     margin: 25px auto;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
