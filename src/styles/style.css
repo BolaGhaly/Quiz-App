@@ -321,7 +321,8 @@ h1 {
   background: lightcoral;
   border: 2px solid rgb(255, 37, 37);
 }
-.resContainer .resetQuizButton {
+
+.resetQuizButton {
   cursor: pointer;
   border: 2px solid rgb(99, 85, 68);
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
@@ -336,7 +337,7 @@ h1 {
   font-weight: 600;
   font-family: "Poppins", sans-serif;
 }
-.resContainer .resetQuizButton a {
+.resetQuizButton a {
   color: black;
   text-decoration: none;
 }
