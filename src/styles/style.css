@@ -220,30 +220,15 @@ h1 {
   margin: 10px 0 15px;
   background: #1bbaea;
 }
-.cardContainer .cards .gameoverButtonsContainer .resetQuizButton {
-  cursor: pointer;
-  border: 2px solid rgb(99, 85, 68);
-  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  margin: 0 auto;
-  padding: 10px 40px;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 16px;
-  color: black;
-  background: linear-gradient(180deg, rgb(241, 228, 228), rgb(206, 129, 29));
-  font-weight: 600;
-}
-.cardContainer .cards .gameoverButtonsContainer .resetQuizButton a {
-  color: black;
-  text-decoration: none;
-}
 
 /*-------------------- ShowResults.tsx --------------------*/
 .resContainer {
   min-height: 100vh;
   background-color: rgba(106, 147, 167, 0.2);
-  color: rgb(255, 255, 255);
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem 1.5rem;
 }
 .resContainer .topContainer {
   display: flex;
@@ -253,8 +238,8 @@ h1 {
 }
 .resContainer .topContainer h4 {
   text-shadow: black 0px 0px 2px;
-  font-size: 26px;
-  padding: 5px 20px 35px;
+  font-size: 1.5rem;
+  padding: 1rem 0;
 }
 .resContainer .topContainer .resetQuizButton {
   cursor: pointer;
@@ -276,102 +261,84 @@ h1 {
   text-decoration: none;
 }
 .resContainer .ansContainer {
-  padding: 0 25px 16px;
+  padding: 0 1.5rem 1.5rem;
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 .resContainer .ansContainer .eachDiv {
-  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(238, 238, 238);
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 100%;
 }
 .resContainer .ansContainer .eachDiv .oneLine p {
-  position: relative;
-  font-size: 20px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  font-size: 1.125rem;
 }
 .resContainer .ansContainer .eachDiv .oneLine p span {
-  color: rgb(238, 238, 238);
-  text-shadow: black 0px 0px 2px;
-  padding-left: 10px;
+  color: black;
+  padding-left: 0.5rem;
 }
 .resContainer .ansContainer .eachDiv .oneLine .scoreOne {
-  color: rgb(0, 255, 94);
+  color: rgb(0, 110, 40);
 }
 .resContainer .ansContainer .eachDiv .oneLine .scoreZero {
-  color: rgb(255, 64, 64);
+  color: rgb(209, 23, 23);
 }
-.resContainer .ansContainer .eachDiv .oneLine .scoreOne::before {
-  content: "";
-  z-index: -100;
-  left: 1px;
-  top: 24px;
-  position: absolute;
-  height: 2px;
-  background: rgb(0, 255, 94);
-  width: 36px;
+.resContainer .ansContainer .eachDiv .oneLine div {
+  display: grid;
+  justify-content: center;
+  align-items: flex-end;
 }
-.resContainer .ansContainer .eachDiv .oneLine .scoreZero::before {
-  content: "";
-  z-index: -100;
-  left: 1px;
-  top: 24px;
-  position: absolute;
-  height: 2px;
-  background: rgb(255, 64, 64);
-  width: 42px;
-}
-.resContainer .ansContainer .eachDiv .oneLine .anyResBtn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 6px 20px;
-  margin: 10px 0 15px;
-  box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
-  border-radius: 15px;
+.resContainer .ansContainer .eachDiv .oneLine div button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
   color: black;
-  width: 300px;
+  min-width: 200px;
+  margin-bottom: 0.75rem;
+  font-family: "Poppins", sans-serif;
+}
+.resContainer .ansContainer .eachDiv .oneLine div button:last-of-type {
+  margin: 0;
+}
+.resContainer .ansContainer .eachDiv .oneLine div button:first-of-type {
+  margin: 0.75rem 0;
+}
+.resContainer .ansContainer .eachDiv .oneLine div .anyResBtn {
   background: rgb(182, 255, 246);
   border: 2px solid rgb(236, 104, 55);
 }
-.resContainer .ansContainer .eachDiv .oneLine .correctResBtn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 6px 20px;
-  margin: 10px 0 15px;
-  box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
-  border-radius: 15px;
-  color: black;
-  width: 300px;
+.resContainer .ansContainer .eachDiv .oneLine div .correctResBtn {
   background: lightgreen;
   border: 2px solid rgb(0, 138, 0);
 }
-.resContainer .ansContainer .eachDiv .oneLine .wrongResBtn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 6px 20px;
-  margin: 10px 0 15px;
-  box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
-  border-radius: 15px;
-  color: black;
-  width: 300px;
+.resContainer .ansContainer .eachDiv .oneLine div .wrongResBtn {
   background: lightcoral;
   border: 2px solid rgb(255, 37, 37);
+}
+.resContainer .resetQuizButton {
+  cursor: pointer;
+  border: 2px solid rgb(99, 85, 68);
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 10px 40px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  color: black;
+  background: linear-gradient(180deg, rgb(241, 228, 228), rgb(206, 129, 29));
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+.resContainer .resetQuizButton a {
+  color: black;
+  text-decoration: none;
 }
 
 /*-------------------- Media Queries --------------------*/
@@ -381,6 +348,9 @@ h1 {
   }
   .cardContainer .cards {
     width: 360px;
+  }
+  .resContainer {
+    padding: 0 0 1.5rem;
   }
 }
 @media screen and (max-width: 375px) {
@@ -393,11 +363,6 @@ h1 {
     margin: 30px auto;
     width: 320px;
   }
-  .resContainer .ansContainer .eachDiv .oneLine .anyResBtn,
-  .resContainer .ansContainer .eachDiv .oneLine .correctResBtn,
-  .resContainer .ansContainer .eachDiv .oneLine .wrongResBtn {
-    width: 280px;
-  }
 }
 @media screen and (max-width: 335px) {
   .homeForm form {
@@ -405,11 +370,6 @@ h1 {
   }
   .cardContainer .cards {
     width: 300px;
-  }
-  .resContainer .ansContainer .eachDiv .oneLine .anyResBtn,
-  .resContainer .ansContainer .eachDiv .oneLine .correctResBtn,
-  .resContainer .ansContainer .eachDiv .oneLine .wrongResBtn {
-    width: 250px;
   }
 }
 @media screen and (max-width: 315px) {
@@ -419,10 +379,8 @@ h1 {
   .cardContainer .cards {
     width: 270px;
   }
-  .resContainer .ansContainer .eachDiv .oneLine .anyResBtn,
-  .resContainer .ansContainer .eachDiv .oneLine .correctResBtn,
-  .resContainer .ansContainer .eachDiv .oneLine .wrongResBtn {
-    width: 225px;
+  .ansContainer {
+    padding: 0 0.5rem 1rem !important;
   }
 }
 @media screen and (max-width: 280px) {
@@ -431,11 +389,6 @@ h1 {
   }
   .cardContainer .cards {
     width: 250px;
-  }
-  .resContainer .ansContainer .eachDiv .oneLine .anyResBtn,
-  .resContainer .ansContainer .eachDiv .oneLine .correctResBtn,
-  .resContainer .ansContainer .eachDiv .oneLine .wrongResBtn {
-    width: 200px;
   }
 }
 @media screen and (max-width: 1440px) and (max-height: 600px) {

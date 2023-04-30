@@ -16,9 +16,6 @@ const ShowResults: React.FC<Props> = (props: Props) => {
   return (
     <div className="resContainer">
       <div className="topContainer">
-        <button className="resetQuizButton">
-          <a href="/">Reset Quiz</a>
-        </button>
         <h4>
           Score: {props.score} / {props.totalQuestions}
         </h4>
@@ -32,23 +29,26 @@ const ShowResults: React.FC<Props> = (props: Props) => {
                   1 pt.
                   <span dangerouslySetInnerHTML={{ __html: e.question }} />
                 </p>
-                {e.all_answers.map((answer: any, index: number) => (
-                  <button
-                    key={index}
-                    className={`${
-                      e.answer === e.correctAnswer && e.correctAnswer === answer
-                        ? "correctResBtn"
-                        : "anyResBtn"
-                    }`}
-                    disabled={true}
-                  >
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: answer,
-                      }}
-                    />
-                  </button>
-                ))}
+                <div>
+                  {e.all_answers.map((answer: any, index: number) => (
+                    <button
+                      key={index}
+                      className={`${
+                        e.answer === e.correctAnswer &&
+                        e.correctAnswer === answer
+                          ? "correctResBtn"
+                          : "anyResBtn"
+                      }`}
+                      disabled={true}
+                    >
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: answer,
+                        }}
+                      />
+                    </button>
+                  ))}
+                </div>
               </div>
             ) : e.correct === false ? (
               <div className="oneLine">
@@ -56,30 +56,35 @@ const ShowResults: React.FC<Props> = (props: Props) => {
                   0 pt.
                   <span dangerouslySetInnerHTML={{ __html: e.question }} />
                 </p>
-                {e.all_answers.map((answer: any, index: number) => (
-                  <button
-                    key={index}
-                    className={`${
-                      answer === e.correctAnswer
-                        ? "correctResBtn"
-                        : e.answer !== e.correctAnswer && e.answer === answer
-                        ? "wrongResBtn"
-                        : "anyResBtn"
-                    }`}
-                    disabled={true}
-                  >
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: answer,
-                      }}
-                    />
-                  </button>
-                ))}
+                <div>
+                  {e.all_answers.map((answer: any, index: number) => (
+                    <button
+                      key={index}
+                      className={`${
+                        answer === e.correctAnswer
+                          ? "correctResBtn"
+                          : e.answer !== e.correctAnswer && e.answer === answer
+                          ? "wrongResBtn"
+                          : "anyResBtn"
+                      }`}
+                      disabled={true}
+                    >
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: answer,
+                        }}
+                      />
+                    </button>
+                  ))}
+                </div>
               </div>
             ) : null}
           </div>
         ))}
       </div>
+      <button className="resetQuizButton">
+        <a href="/">Reset Quiz</a>
+      </button>
     </div>
   );
 };

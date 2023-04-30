@@ -31,18 +31,12 @@ $light-orange: rgb(236, 104, 55);
 }
 
 @mixin showResultsButtons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  user-select: none;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 6px 20px;
-  margin: 10px 0 15px;
-  box-shadow: -6px 8px 6px rgba(0, 0, 0, 0.678);
-  border-radius: 15px;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
   color: black;
-  width: 300px;
+  min-width: 200px;
 }
 
 @mixin scoresBefore {
@@ -72,9 +66,11 @@ html {
 }
 
 body {
-  background-image: linear-gradient(100deg,
+  background-image: linear-gradient(
+      100deg,
       rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.8)),
+      rgba(0, 0, 0, 0.8)
+    ),
     url("../unsplash-bg.jpeg");
   background-size: cover;
   background-position: center center;
@@ -254,15 +250,6 @@ h1 {
         margin: 10px 0 15px;
         background: #1bbaea;
       }
-
-      .resetQuizButton {
-        @include myButtons();
-
-        a {
-          color: black;
-          text-decoration: none;
-        }
-      }
     }
   }
 }
@@ -271,7 +258,10 @@ h1 {
 .resContainer {
   min-height: 100vh;
   background-color: rgba(106, 147, 167, 0.2);
-  color: rgb(255, 255, 255);
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem 1.5rem;
 
   .topContainer {
     display: flex;
@@ -281,8 +271,8 @@ h1 {
 
     h4 {
       text-shadow: $black-font-shadow;
-      font-size: 26px;
-      padding: 5px 20px 35px;
+      font-size: 1.5rem;
+      padding: 1rem 0;
     }
 
     .resetQuizButton {
@@ -297,62 +287,83 @@ h1 {
   }
 
   .ansContainer {
-    padding: 0 25px 16px;
+    padding: 0 1.5rem 1.5rem;
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
     .eachDiv {
-      padding-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      background-color: $ws-bg;
+      border-radius: 0.5rem;
+      padding: 1rem 0.75rem;
+      width: 100%;
 
       .oneLine {
         p {
-          position: relative;
-          font-size: 20px;
-          user-select: none;
+          font-size: 1.125rem;
 
           span {
-            color: $ws-bg;
-            text-shadow: $black-font-shadow;
-            padding-left: 10px;
+            color: black;
+            padding-left: 0.5rem;
           }
         }
 
         .scoreOne {
-          color: rgb(0, 255, 94);
+          color: rgb(0, 110, 40);
         }
 
         .scoreZero {
-          color: rgb(255, 64, 64);
+          color: rgb(209, 23, 23);
         }
 
-        .scoreOne::before {
-          @include scoresBefore();
-          background: rgb(0, 255, 94);
-          width: 36px;
-        }
+        div {
+          display: grid;
+          justify-content: center;
+          align-items: flex-end;
 
-        .scoreZero::before {
-          @include scoresBefore();
-          background: rgb(255, 64, 64);
-          width: 42px;
-        }
+          button {
+            @include showResultsButtons();
+            margin-bottom: 0.75rem;
+            font-family: "Poppins", sans-serif;
+          }
 
-        .anyResBtn {
-          @include showResultsButtons();
-          background: $light-blue;
-          border: 2px solid $light-orange;
-        }
+          button:last-of-type {
+            margin: 0;
+          }
 
-        .correctResBtn {
-          @include showResultsButtons();
-          background: lightgreen;
-          border: 2px solid $light-green;
-        }
+          button:first-of-type {
+            margin: 0.75rem 0;
+          }
 
-        .wrongResBtn {
-          @include showResultsButtons();
-          background: lightcoral;
-          border: 2px solid $light-red;
+          .anyResBtn {
+            background: $light-blue;
+            border: 2px solid $light-orange;
+          }
+
+          .correctResBtn {
+            background: lightgreen;
+            border: 2px solid $light-green;
+          }
+
+          .wrongResBtn {
+            background: lightcoral;
+            border: 2px solid $light-red;
+          }
         }
       }
+    }
+  }
+
+  .resetQuizButton {
+    @include myButtons();
+    font-family: "Poppins", sans-serif;
+
+    a {
+      color: black;
+      text-decoration: none;
     }
   }
 }
@@ -369,6 +380,10 @@ h1 {
     .cards {
       width: 360px;
     }
+  }
+
+  .resContainer {
+    padding: 0 0 1.5rem;
   }
 }
 
@@ -387,20 +402,6 @@ h1 {
       width: 320px;
     }
   }
-
-  .resContainer {
-    .ansContainer {
-      .eachDiv {
-        .oneLine {
-          .anyResBtn,
-          .correctResBtn,
-          .wrongResBtn {
-            width: 280px;
-          }
-        }
-      }
-    }
-  }
 }
 
 @media screen and (max-width: 335px) {
@@ -413,20 +414,6 @@ h1 {
   .cardContainer {
     .cards {
       width: 300px;
-    }
-  }
-
-  .resContainer {
-    .ansContainer {
-      .eachDiv {
-        .oneLine {
-          .anyResBtn,
-          .correctResBtn,
-          .wrongResBtn {
-            width: 250px;
-          }
-        }
-      }
     }
   }
 }
@@ -444,18 +431,8 @@ h1 {
     }
   }
 
-  .resContainer {
-    .ansContainer {
-      .eachDiv {
-        .oneLine {
-          .anyResBtn,
-          .correctResBtn,
-          .wrongResBtn {
-            width: 225px;
-          }
-        }
-      }
-    }
+  .ansContainer {
+    padding: 0 0.5rem 1rem !important;
   }
 }
 
@@ -469,20 +446,6 @@ h1 {
   .cardContainer {
     .cards {
       width: 250px;
-    }
-  }
-
-  .resContainer {
-    .ansContainer {
-      .eachDiv {
-        .oneLine {
-          .anyResBtn,
-          .correctResBtn,
-          .wrongResBtn {
-            width: 200px;
-          }
-        }
-      }
     }
   }
 }
